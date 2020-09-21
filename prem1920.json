@@ -1,0 +1,17 @@
+{
+  "salah": {"team": "liverpool",
+          "totalGA":  29, "g": 19, "a": 10, "apps":  34, "minutes": 3045,
+          "points1": 10, "points2": 17, "meaningfulGame": 9, "meaningfulGA": 14, "pointDif": -19},
+  "aubameyang": {"team": "arsenal",
+          "totalGA":  25, "g": 22, "a": 3, "apps":  36, "minutes": 3392,
+          "points1": 16, "points2": 25, "meaningfulGame": 14, "meaningfulGA": 20, "pointDif": -23},
+  "de bruyne": {"team": "manchester city",
+          "totalGA":  33, "g": 13, "a": 20, "apps":  35, "minutes": 2984,
+          "points1": 6, "points2": 9, "meaningfulGame": 6, "meaningfulGA": 9, "pointDif": -10},
+  "vardy": {"team": "leicester city",
+          "totalGA":  28, "g": 23, "a": 5, "apps":  35, "minutes": 3271,
+          "points1": 8, "points2": 14, "meaningfulGame": 7, "meaningfulGA": 11, "pointDif": -14},
+  "rashford": {"team": "manchester united",
+          "totalGA":  24, "g": 17, "a": 7, "apps":  31, "minutes": 2826,
+          "points1": 11, "points2": 16, "meaningfulGame": 10, "meaningfulGA": 14, "pointDif": -16}
+}
