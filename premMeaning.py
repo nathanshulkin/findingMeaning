@@ -40,11 +40,18 @@ print('\n\n\n')
 # add players to dictionary
 xGlAst = premFunctions.getGoalsandAssists(prem2021, teams)
 
+playersMW = {}
 
-# iterate through players and find meaning
+
+# iterate through players and find ga for each matchweek
 for person in xGlAst:
     for team in teams:
         if person[0] in teams[team]:
-            premFunctions.findMeaningInGame(prem2021, person[0], team)
+            playersMW[person[0]] = premFunctions.findGAInGame(prem2021, person[0], team)
     # print('')
 
+# iterate through players and find meaning
+for person in playersMW:
+    print(person.capitalize())
+    print(playersMW[person])
+    print('')

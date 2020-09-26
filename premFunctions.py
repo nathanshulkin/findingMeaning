@@ -1,6 +1,5 @@
 # Nathan Shulkin
 
-
 # functions
 # display teams by mw
 def displayTeamMW(prem, team, mw):
@@ -18,11 +17,11 @@ def displayTeamMW(prem, team, mw):
 
     print("goals:")  # + str(prem2021[team]['mw1']['goals']))
     for scor in prem[team][mw]['goals']:
-        print(scor + ": " + str(prem[team]['mw1']['goals'][scor]) + "\t\t", end="")
+        print(scor + ": " + str(prem[team]['mw1']['goals'][scor]) + "\t\t")
     print('')
     print("assists:")
     for astr in prem[team][mw]['assists']:
-        print(astr + ": " + str(prem[team]['mw1']['assists'][astr]) + "\t\t", end="")
+        print(astr + ": " + str(prem[team]['mw1']['assists'][astr]) + "\t\t")
     print('\n')
 
 
@@ -65,26 +64,32 @@ def getGoalsandAssists(prem, teamsList):
     return ga
 
 
-def findMeaningInGame(prem, player, team):
-    # print('buttchug')
-    # print(player.capitalize() + ' has ' + str(ga) + ' GA and is on ' + team)
+def findGAInGame(prem, player, team):
+
     # dictionary for each ga in each mw for player
     playerGA = {}
 
+    # search through teams
     for daTeams in prem:
+        # if player on team
         if team == daTeams:
+            # for each mw for the team
             for mw in prem[daTeams]:
+                # if player scored goal
                 if player in prem[daTeams][mw]['goals']:
+                    # add goals
                     try:
                         playerGA[str(mw)] += prem[daTeams][mw]['goals'][player]
+                    # unless first goal
                     except KeyError:
                         playerGA[mw] = prem[daTeams][mw]['goals'][player]
-
+                # if player assisted
                 if player in prem[daTeams][mw]['assists']:
+                    # add assists
                     try:
                         playerGA[str(mw)] += prem[daTeams][mw]['assists'][player]
+                    # unless first assist
                     except KeyError:
                         playerGA[mw] = prem[daTeams][mw]['assists'][player]
-            print(player.capitalize() + ': ')
-            print(playerGA)
 
+    return playerGA
