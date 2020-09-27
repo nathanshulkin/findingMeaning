@@ -25,13 +25,13 @@ for team in prem2021:
 # get matchweek
 mchwek = "mw" + str(input("what matchweek would you like? "))
 
-for teem in teams:
-    try:
-        premFunctions.displayTeamMW(prem2021, teem, mchwek)
-        print('\n')
-    except KeyError:
-        print('have not played ' + mchwek + ' yet\n\n')
-print('\n\n\n')
+# for teem in teams:
+    # try:
+        # premFunctions.displayTeamMW(prem2021, teem, mchwek)
+        # print('\n')
+    # except KeyError:
+        # print('have not played ' + mchwek + ' yet\n\n')
+# print('\n\n\n')
 
 # iterate through and display player info
 # for plyr in prem1920:
@@ -41,7 +41,7 @@ print('\n\n\n')
 xGlAst = premFunctions.getGoalsandAssists(prem2021, teams)
 
 playersMW = {}
-
+theMeaning = {}
 
 # iterate through players and find ga for each matchweek
 for person in xGlAst:
@@ -50,8 +50,18 @@ for person in xGlAst:
             playersMW[person[0]] = premFunctions.findGAInGame(prem2021, person[0], team)
     # print('')
 
+print('\n\n')
+
 # iterate through players and find meaning
 for person in playersMW:
-    print(person.capitalize())
-    print(playersMW[person])
-    print('')
+    for team in teams:
+        if person in teams[team]:
+            print(person.capitalize())
+            score, ptsScore = premFunctions.findMeaning(prem2021, person, team, playersMW)
+            theMeaning[person] = [score, ptsScore]
+            print('\n\n')
+
+# sort theMeaning
+theMeaning = sorted(theMeaning.items(), key=lambda x: x[1], reverse=True)
+print(theMeaning)
+
