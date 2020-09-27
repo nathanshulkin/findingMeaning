@@ -57,11 +57,15 @@ for person in playersMW:
     for team in teams:
         if person in teams[team]:
             print(person.capitalize())
-            score, ptsScore = premFunctions.findMeaning(prem2021, person, team, playersMW)
-            theMeaning[person] = [score, ptsScore]
+            score, ptsScore, appMeaning, gaMeaning = premFunctions.findMeaning(prem2021, person, team, playersMW)
+            theMeaning[person] = [score, ptsScore, appMeaning, gaMeaning]
             print('\n\n')
 
 # sort theMeaning
 theMeaning = sorted(theMeaning.items(), key=lambda x: x[1], reverse=True)
-print(theMeaning)
+
+print("player: meaningScr, meaningPts, meaningApp, meaningGA")
+# display top 20
+for i in range(0, 20):
+    print(theMeaning[i])
 

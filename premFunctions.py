@@ -1,6 +1,8 @@
 # Nathan Shulkin
 
 # functions
+
+
 # display teams by mw
 def displayTeamMW(prem, team, mw):
     print(team.upper() + ': ')
@@ -25,6 +27,7 @@ def displayTeamMW(prem, team, mw):
     print('\n')
 
 
+# display meaningful player
 def displayMeaningfulPlayer(prem, player):
     print(player.upper() + ':')
     # pprint.pprint(prem1920[player])
@@ -35,6 +38,7 @@ def displayMeaningfulPlayer(prem, player):
     print('\n')
 
 
+# get goals and assists for players
 def getGoalsandAssists(prem, teamsList):
     ga = {}
 
@@ -64,6 +68,7 @@ def getGoalsandAssists(prem, teamsList):
     return ga
 
 
+# find goals and assists for each matchweek
 def findGAInGame(prem, player, team):
 
     # dictionary for each ga in each mw for player
@@ -95,12 +100,13 @@ def findGAInGame(prem, player, team):
     return playerGA
 
 
+# find meaning for each player in each matchweek
 def findMeaning(prem, player, team, playerGA):
     # variables to hold things
-    result = ''
-    after = 0
     totScore = 0
     totPtsScore = 0
+    meaningApp = 0
+    meaningGA = 0
 
     for daTeam in prem:
         if team == daTeam:
@@ -121,16 +127,21 @@ def findMeaning(prem, player, team, playerGA):
                         print('1 point for a tie | 1 point per goal')
                         totScore += 1
                         totPtsScore += playerGA[player][mw]
+                        meaningApp += 1
+                        meaningGA += playerGA[player][mw]
                     else:
                         print('2 points for a win | 2 points per goal')
                         totScore += 2
                         totPtsScore += totPtsScore + (2 * playerGA[player][mw])
+                        meaningApp += 1
+                        meaningGA += playerGA[player][mw]
                 if result == 'd':
-                    after = prem[team][mw]['mScore'] - playerGA[player][mw]
-                    print('after taking away ' + player + ' goals/assists: ' + str(after))
+                    print('after taking away ' + player + ' goals/assists: ')
                     print('1 point for a tie | 1 point per goal')
                     totScore += 1
                     totPtsScore += playerGA[player][mw]
+                    meaningApp += 1
+                    meaningGA += playerGA[player][mw]
                 if result == 'l':
                     print('')
                     print('but they lost, so there is no meaning.')
@@ -138,4 +149,4 @@ def findMeaning(prem, player, team, playerGA):
     print('')
     print(str(player) + '\'s meaningful score: ' + str(totScore) + '\t\t\tmeaningful points score: ' + str(totPtsScore))
 
-    return totScore, totPtsScore
+    return totScore, totPtsScore, meaningApp, meaningGA
