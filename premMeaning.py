@@ -23,7 +23,7 @@ for team in prem2021:
     teams[team] = []
 
 # get matchweek
-mchwek = "mw" + str(input("what matchweek would you like? "))
+# mchwek = "mw" + str(input("what matchweek would you like? "))
 
 # for teem in teams:
     # try:
@@ -36,6 +36,9 @@ mchwek = "mw" + str(input("what matchweek would you like? "))
 # iterate through and display player info
 # for plyr in prem1920:
     # premFunctions.displayMeaningfulPlayer(prem1920, plyr)
+
+
+premFunctions.displayTable(prem2021)
 
 # add players to dictionary
 xGlAst = premFunctions.getGoalsandAssists(prem2021, teams)
@@ -64,7 +67,7 @@ for person in playersMW:
 # sort theMeaning
 theMeaning = sorted(theMeaning.items(), key=lambda x: x[1], reverse=True)
 
-print("player: meaningScr, meaningPts, meaningApp, meaningGA")
+print("player: meaningScr, meaningPts, meaningApp, meaningGA\n")
 # display top 20
 for i in range(0, 20):
     print(theMeaning[i])

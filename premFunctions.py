@@ -3,6 +3,30 @@
 # functions
 
 
+# display table
+def displayTable(prem):
+    # structure for table
+    table = {}
+    for team in prem:
+        table[team] = 0
+        for mw in prem[team]:
+            # 3 points for a win
+            if prem[team][mw]['result'] == 'w':
+                table[team] += 3
+            # 1 point for draw
+            elif prem[team][mw]['result'] == 'd':
+                table[team] += 1
+            # nothing for a loss
+            else:
+                table[team] += 0
+
+    print('\n')
+    # sort table
+    table = sorted(table.items(), key=lambda x: x[1], reverse=True)
+    for team in table:
+        print(str(team[0]).capitalize() + ': ' + str(team[1]))
+
+
 # display teams by mw
 def displayTeamMW(prem, team, mw):
     print(team.upper() + ': ')
@@ -132,11 +156,10 @@ def findMeaning(prem, player, team, playerGA):
                     else:
                         print('2 points for a win | 2 points per goal')
                         totScore += 2
-                        totPtsScore += totPtsScore + (2 * playerGA[player][mw])
+                        totPtsScore += (2 * playerGA[player][mw])
                         meaningApp += 1
                         meaningGA += playerGA[player][mw]
                 if result == 'd':
-                    print('after taking away ' + player + ' goals/assists: ')
                     print('1 point for a tie | 1 point per goal')
                     totScore += 1
                     totPtsScore += playerGA[player][mw]
@@ -145,6 +168,7 @@ def findMeaning(prem, player, team, playerGA):
                 if result == 'l':
                     print('')
                     print('but they lost, so there is no meaning.')
+                print(totPtsScore)
 
     print('')
     print(str(player) + '\'s meaningful score: ' + str(totScore) + '\t\t\tmeaningful points score: ' + str(totPtsScore))
