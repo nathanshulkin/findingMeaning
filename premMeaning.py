@@ -55,6 +55,8 @@ for person in xGlAst:
 
 print('\n\n')
 
+print('players who have scored or assisted in the prem in 20/21...\n\n')
+
 # iterate through players and find meaning
 for person in playersMW:
     for team in teams:
@@ -62,7 +64,8 @@ for person in playersMW:
             print(person.capitalize())
             score, ptsScore, appMeaning, gaMeaning = premFunctions.findMeaning(prem2021, person, team, playersMW)
             theMeaning[person] = [score, ptsScore, appMeaning, gaMeaning]
-            print('\n\n')
+
+print('\n\n')
 
 # sort theMeaning
 theMeaning = sorted(theMeaning.items(), key=lambda x: x[1], reverse=True)

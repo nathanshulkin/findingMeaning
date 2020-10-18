@@ -8,23 +8,30 @@ def displayTable(prem):
     # structure for table
     table = {}
     for team in prem:
-        table[team] = 0
+        gd = 0
+        points = 0
         for mw in prem[team]:
             # 3 points for a win
             if prem[team][mw]['result'] == 'w':
-                table[team] += 3
+                points += 3
+                gd += (prem[team][mw]['mScore'] - prem[team][mw]['oScore'])
             # 1 point for draw
             elif prem[team][mw]['result'] == 'd':
-                table[team] += 1
+                points += 1
+                gd += (prem[team][mw]['mScore'] - prem[team][mw]['oScore'])
             # nothing for a loss
             else:
-                table[team] += 0
+                points += 0
+                gd += (prem[team][mw]['mScore'] - prem[team][mw]['oScore'])
+        # print(gd)
+        # table[str(team)+'gd'] = gd
+        table[team] = [points, gd]
 
     print('\n')
     # sort table
     table = sorted(table.items(), key=lambda x: x[1], reverse=True)
     for team in table:
-        print(str(team[0]).capitalize() + ': ' + str(team[1]))
+        print(str(team[0]).capitalize() + ': ' + str(team[1][0]))
 
 
 # display teams by mw
@@ -136,41 +143,41 @@ def findMeaning(prem, player, team, playerGA):
         if team == daTeam:
             for mw in playerGA[player]:
                 result = prem[team][mw]['result']
-                print('')
-                print(result, end=" ")
-                print(str(prem[team][mw]['mScore']) + ' - ' + str(prem[team][mw]['oScore']))
-                print(player + ' scored/assisted', end=" ")
-                print(playerGA[player][mw])
+                # print('')
+                # print(result, end=" ")
+                # print(str(prem[team][mw]['mScore']) + ' - ' + str(prem[team][mw]['oScore']))
+                # print(player + ' scored/assisted', end=" ")
+                # print(playerGA[player][mw])
                 if result == 'w':
                     after = prem[team][mw]['mScore'] - playerGA[player][mw]
-                    print('after taking away ' + player + ' goals/assists: ')
-                    print(str(after) + ' - ' + str(prem[team][mw]['oScore']))
+                    # print('after taking away ' + player + ' goals/assists: ')
+                    # print(str(after) + ' - ' + str(prem[team][mw]['oScore']))
                     if after > prem[team][mw]['oScore']:
-                        print('meaningless goals')
+                        # print('meaningless goals')
+                        int(1)
                     elif after == prem[team][mw]['oScore']:
-                        print('1 point for a tie | 1 point per goal')
+                        # print('1 point for a tie | 1 point per goal')
                         totScore += 1
                         totPtsScore += playerGA[player][mw]
                         meaningApp += 1
                         meaningGA += playerGA[player][mw]
                     else:
-                        print('2 points for a win | 2 points per goal')
+                        # print('2 points for a win | 2 points per goal')
                         totScore += 2
                         totPtsScore += (2 * playerGA[player][mw])
                         meaningApp += 1
                         meaningGA += playerGA[player][mw]
                 if result == 'd':
-                    print('1 point for a tie | 1 point per goal')
+                    # print('1 point for a tie | 1 point per goal')
                     totScore += 1
                     totPtsScore += playerGA[player][mw]
                     meaningApp += 1
                     meaningGA += playerGA[player][mw]
                 if result == 'l':
-                    print('')
-                    print('but they lost, so there is no meaning.')
-                print(totPtsScore)
+                    int(1)
+                    # print('but they lost, so there is no meaning.')
+                # print(totPtsScore)
 
-    print('')
-    print(str(player) + '\'s meaningful score: ' + str(totScore) + '\t\t\tmeaningful points score: ' + str(totPtsScore))
+    # print(str(player) + '\'s meaningful score: ' + str(totScore) + '\t\t\tmeaningful points score: ' + str(totPtsScore))
 
     return totScore, totPtsScore, meaningApp, meaningGA
