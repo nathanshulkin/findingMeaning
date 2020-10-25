@@ -8,6 +8,7 @@ import premFunctions
 # set up data structures
 teams = {}
 xGlAst = {}
+table = []
 global prem1920
 global prem2021
 
@@ -38,7 +39,7 @@ for team in prem2021:
     # premFunctions.displayMeaningfulPlayer(prem1920, plyr)
 
 
-premFunctions.displayTable(prem2021)
+table = premFunctions.displayTable(prem2021)
 
 # add players to dictionary
 xGlAst = premFunctions.getGoalsandAssists(prem2021, teams)

@@ -33,6 +33,8 @@ def displayTable(prem):
     for team in table:
         print(str(team[0]).capitalize() + ': ' + str(team[1][0]))
 
+    return table
+
 
 # display teams by mw
 def displayTeamMW(prem, team, mw):
