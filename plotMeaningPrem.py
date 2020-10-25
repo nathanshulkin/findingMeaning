@@ -15,7 +15,7 @@ x_values = []
 y_values = []
 players = []
 
-for i in range(len(pm.theMeaning)):
+for i in range(25):
     x_values.append(pm.theMeaning[i][1][2])
     y_values.append(pm.theMeaning[i][1][3])
     players.append(pm.theMeaning[i][0])
@@ -30,7 +30,7 @@ scatterData = [{
     'mode': 'markers',
     # 'size': 10,
     'marker': {
-        'colorscale': 'Jet',
+        'colorscale': 'Bluered',
         'color': y_values,
         'colorbar': {'title': 'Value'},
         }
@@ -66,4 +66,4 @@ barLayout = {
 }
 
 offline.plot({'data': scatterData, 'layout': scatLayout}, filename='meaningInThePrem.html')
-# offline.plot({'data': barData, 'layout': barLayout}, filename='meaningInThePrem1.html')
+offline.plot({'data': barData, 'layout': barLayout}, filename='meaningInThePrem1.html')
