@@ -119,4 +119,4 @@ barLayout = {
 
 offline.plot({'data': scatterData1, 'layout': scatLayout1}, filename='meaningInThePrem.html')
 offline.plot({'data': barData, 'layout': barLayout}, filename='meaningInThePrem1.html')
-# offline.plot({'data': barTable, 'layout': barLayout}, filename='premTable.html')
+offline.plot({'data': barTable, 'layout': barLayout}, filename='premTable.html')
