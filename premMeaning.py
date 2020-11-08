@@ -4,11 +4,13 @@
 import json
 
 import premFunctions
+import player
 
 # set up data structures
 teams = {}
 xGlAst = {}
 table = []
+GATot = 0
 global prem1920
 global prem2021
 
@@ -22,21 +24,6 @@ with open("prem2021.json", 'r') as premSon:
 # get list of prem teams
 for team in prem2021:
     teams[team] = []
-
-# get matchweek
-# mchwek = "mw" + str(input("what matchweek would you like? "))
-
-# for teem in teams:
-    # try:
-        # premFunctions.displayTeamMW(prem2021, teem, mchwek)
-        # print('\n')
-    # except KeyError:
-        # print('have not played ' + mchwek + ' yet\n\n')
-# print('\n\n\n')
-
-# iterate through and display player info
-# for plyr in prem1920:
-    # premFunctions.displayMeaningfulPlayer(prem1920, plyr)
 
 
 table = premFunctions.displayTable(prem2021)
@@ -56,22 +43,17 @@ for person in xGlAst:
 
 print('\n\n')
 
-print('players who have scored or assisted in the prem in 20/21...\n\n')
-
 # iterate through players and find meaning
 for person in playersMW:
     for team in teams:
         if person in teams[team]:
-            print(person.capitalize())
-            score, ptsScore, appMeaning, gaMeaning = premFunctions.findMeaning(prem2021, person, team, playersMW)
-            theMeaning[person] = [score, ptsScore, appMeaning, gaMeaning]
-
-print('\n\n')
+            score, ptsScore, GATot, appMeaning, gaMeaning = premFunctions.findMeaning(prem2021, person, team, playersMW)
+            theMeaning[person] = [score, ptsScore, GATot, appMeaning, gaMeaning]
 
 # sort theMeaning
 theMeaning = sorted(theMeaning.items(), key=lambda x: x[1], reverse=True)
 
-print("player: meaningScr, meaningPts, meaningApp, meaningGA\n")
+print("player: meaningScr, meaningPts, totGA, meaningApp, meaningGA\n")
 # display top 20
 for i in range(0, 20):
     print(theMeaning[i])

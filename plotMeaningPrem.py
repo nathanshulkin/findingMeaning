@@ -8,41 +8,55 @@ from plotly import offline
 
 import premMeaning as pm
 
-print(pm.theMeaning)
 
 # define some data
-x_values = []
-y_values = []
-players = []
+meanApp = []
+meanGA = []
+meanScore = []
+meanPoints = []
 meaningfulGApGame = []
+totGA = []
+players = []
 team = []
 points = []
+teamPlayed = []
 
-
+# get the data
 for i in range(len(pm.table)):
-    x_values.append(pm.theMeaning[i][1][2])
-    y_values.append(pm.theMeaning[i][1][3])
+    meanScore.append(pm.theMeaning[i][1][0])
+    meanPoints.append(pm.theMeaning[i][1][1])
+    meanApp.append(pm.theMeaning[i][1][3])
+    meanGA.append(pm.theMeaning[i][1][4])
+    totGA.append(pm.theMeaning[i][1][2])
+    meaningfulGApGame.append(pm.theMeaning[i][1][4]/pm.theMeaning[i][1][3])
     players.append(pm.theMeaning[i][0])
-    meaningfulGApGame.append(pm.theMeaning[i][1][3]/pm.theMeaning[i][1][2])
+
     team.append(pm.table[i][0])
     points.append(pm.table[i][1][0])
+    teamPlayed.append(pm.table[i][1][1])
 
 
 players.reverse()
-y_values.reverse()
-x_values.reverse()
+totGA.reverse()
+meanGA.reverse()
+meanApp.reverse()
+meanScore.reverse()
+meanPoints.reverse()
+meaningfulGApGame.reverse()
 
 # scatter plot, color gradient
 scatterData = [{
     'type': 'scatter',
-    'x': x_values,
-    'y': y_values,
+    'x': totGA,
+    'y': meanGA,
     'text': players,
     'mode': 'markers',
+    'hoverinfo': 'text+x+y',
+    # 'textposition': 'bottom right',
     # 'size': 10,
     'marker': {
         'colorscale': 'Bluered',
-        'color': y_values,
+        'color': meanGA,
         'colorbar': {'title': 'Value'},
         }
     }]
@@ -51,13 +65,13 @@ scatterData = [{
 scatterData1 = [{
     'type': 'scatter',
     'x': players,
-    'y': y_values,
+    'y': meanGA,
     # 'text': players,
     'mode': 'markers',
     # 'size': 10,
     'marker': {
         'colorscale': 'Bluered',
-        'color': y_values,
+        'color': meanGA,
         'colorbar': {'title': 'Value'},
         }
     }]
@@ -65,7 +79,7 @@ scatterData1 = [{
 barData = [{
     'type': 'bar',
     'x': players,
-    'y': y_values,
+    'y': meanGA,
     'name': 'meaningful goals/assists',
     'width': 0.5,
     'marker_color': 'rgb(26, 118, 255)'
@@ -74,7 +88,7 @@ barData = [{
     {
     'type': 'bar',
     'x': players,
-    'y': x_values,
+    'y': meanApp,
     'name': 'meaningful appearances',
     'width': 0.5,
     'marker_color': 'rgb(255, 118, 26)'
@@ -90,7 +104,7 @@ barTable = {
 scatLayout = {
     'title': 'Meaning in the Prem',
     'xaxis': {
-        'title': 'Meaningful Appearances',
+        'title': 'Total Goals/Assists',
     },
     'yaxis': {
         'title': 'Meaningful Goals/Assists',
@@ -108,15 +122,15 @@ scatLayout1 = {
 }
 
 barLayout = {
-    'title': 'Meaning in the Prem',
+    'title': 'Premier League 20/21 Table',
     'xaxis': {
-        'title': 'Most Meaningful Players',
+        'title': '',
     },
     'yaxis': {
-
+        'tickmode': 'linear',
     },
 }
 
-offline.plot({'data': scatterData1, 'layout': scatLayout1}, filename='meaningInThePrem.html')
+offline.plot({'data': scatterData, 'layout': scatLayout}, filename='meaningInThePrem.html')
 offline.plot({'data': barData, 'layout': barLayout}, filename='meaningInThePrem1.html')
 offline.plot({'data': barTable, 'layout': barLayout}, filename='premTable.html')

@@ -10,7 +10,10 @@ def displayTable(prem):
     for team in prem:
         gd = 0
         points = 0
+        played = 0
         for mw in prem[team]:
+            # match played
+            played += 1
             # 3 points for a win
             if prem[team][mw]['result'] == 'w':
                 points += 3
@@ -25,13 +28,10 @@ def displayTable(prem):
                 gd += (prem[team][mw]['mScore'] - prem[team][mw]['oScore'])
         # print(gd)
         # table[str(team)+'gd'] = gd
-        table[team] = [points, gd]
+        table[team] = [points, gd, played]
 
-    print('\n')
     # sort table
     table = sorted(table.items(), key=lambda x: x[1], reverse=True)
-    for team in table:
-        print(str(team[0]).capitalize() + ': ' + str(team[1][0]))
 
     return table
 
@@ -138,6 +138,7 @@ def findMeaning(prem, player, team, playerGA):
     # variables to hold things
     totScore = 0
     totPtsScore = 0
+    totGA = 0
     meaningApp = 0
     meaningGA = 0
 
@@ -150,6 +151,7 @@ def findMeaning(prem, player, team, playerGA):
                 # print(str(prem[team][mw]['mScore']) + ' - ' + str(prem[team][mw]['oScore']))
                 # print(player + ' scored/assisted', end=" ")
                 # print(playerGA[player][mw])
+                totGA += playerGA[player][mw]
                 if result == 'w':
                     after = prem[team][mw]['mScore'] - playerGA[player][mw]
                     # print('after taking away ' + player + ' goals/assists: ')
@@ -182,4 +184,4 @@ def findMeaning(prem, player, team, playerGA):
 
     # print(str(player) + '\'s meaningful score: ' + str(totScore) + '\t\t\tmeaningful points score: ' + str(totPtsScore))
 
-    return totScore, totPtsScore, meaningApp, meaningGA
+    return totScore, totPtsScore, totGA, meaningApp, meaningGA
