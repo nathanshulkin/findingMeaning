@@ -4,12 +4,16 @@
 import json
 
 import premFunctions
-import player
+from player import *
 
 # set up data structures
 teams = {}
 xGlAst = {}
+xGoals = {}
+xAssists = {}
+goalsANDassists= {}
 table = []
+daPlayers = []
 GATot = 0
 global prem1920
 global prem2021
@@ -29,10 +33,21 @@ for team in prem2021:
 table = premFunctions.displayTable(prem2021)
 
 # add players to dictionary
-xGlAst = premFunctions.getGoalsandAssists(prem2021, teams)
+xGlAst, xGoals, xAssists = premFunctions.getGoalsandAssists(prem2021, teams)
+
+
+for g in xGoals:
+    goalsANDassists[g[0]] = [g[1], 0]
+for a in xAssists:
+    try:
+        goalsANDassists[a[0]][1] = a[1]
+    except KeyError:
+        goalsANDassists[a[0]] = [0, a[1]]
+for i in goalsANDassists:
+    print(i, end=" ")
+    print(goalsANDassists[i])
 
 playersMW = {}
-theMeaning = {}
 
 # iterate through players and find ga for each matchweek
 for person in xGlAst:
@@ -48,13 +63,12 @@ for person in playersMW:
     for team in teams:
         if person in teams[team]:
             score, ptsScore, GATot, appMeaning, gaMeaning = premFunctions.findMeaning(prem2021, person, team, playersMW)
-            theMeaning[person] = [score, ptsScore, GATot, appMeaning, gaMeaning]
+            # create players
+            daPlayers.append(Player(person, goalsANDassists[person][0], goalsANDassists[person][1], gaMeaning,
+                                    appMeaning, score, ptsScore))
 
 # sort theMeaning
-theMeaning = sorted(theMeaning.items(), key=lambda x: x[1], reverse=True)
+daPlayers = sorted(daPlayers, key=lambda x: x.getGA(), reverse=True)
 
-print("player: meaningScr, meaningPts, totGA, meaningApp, meaningGA\n")
-# display top 20
-for i in range(0, 20):
-    print(theMeaning[i])
+
 

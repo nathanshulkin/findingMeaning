@@ -15,6 +15,8 @@ meanGA = []
 meanScore = []
 meanPoints = []
 meaningfulGApGame = []
+goals = []
+assists = []
 totGA = []
 players = []
 team = []
@@ -23,20 +25,28 @@ teamPlayed = []
 
 # get the data
 for i in range(len(pm.table)):
-    meanScore.append(pm.theMeaning[i][1][0])
-    meanPoints.append(pm.theMeaning[i][1][1])
-    meanApp.append(pm.theMeaning[i][1][3])
-    meanGA.append(pm.theMeaning[i][1][4])
-    totGA.append(pm.theMeaning[i][1][2])
-    meaningfulGApGame.append(pm.theMeaning[i][1][4]/pm.theMeaning[i][1][3])
-    players.append(pm.theMeaning[i][0])
+    meanScore.append(pm.daPlayers[i].getMeanScore())
+    meanPoints.append(pm.daPlayers[i].getMeanPoints())
+    meanApp.append(pm.daPlayers[i].getMeanApp())
+    meanGA.append(pm.daPlayers[i].getMeanGA())
+    totGA.append(pm.daPlayers[i].getGA())
+    try:
+        meaningfulGApGame.append(pm.daPlayers[i].getMeanGA()/pm.daPlayers[i].getMeanApp())
+    except ZeroDivisionError:
+        meaningfulGApGame.append(0)
+    players.append(pm.daPlayers[i].getName())
 
     team.append(pm.table[i][0])
     points.append(pm.table[i][1][0])
     teamPlayed.append(pm.table[i][1][1])
 
+    goals.append(pm.daPlayers[i].getGoals())
+    assists.append(pm.daPlayers[i].getAssists())
+
 
 players.reverse()
+goals.reverse()
+assists.reverse()
 totGA.reverse()
 meanGA.reverse()
 meanApp.reverse()
@@ -61,6 +71,7 @@ scatterData = [{
         }
     }]
 
+
 # ratio of meaningful goals/game
 scatterData1 = [{
     'type': 'scatter',
@@ -68,6 +79,47 @@ scatterData1 = [{
     'y': meanGA,
     # 'text': players,
     'mode': 'markers',
+    # 'size': 10,
+    'marker': {
+        'colorscale': 'Bluered',
+        'color': meanGA,
+        'colorbar': {'title': 'Value'},
+        }
+    }]
+
+# unzip dictionary into two tuples
+# thisList = goals.items()
+# scorers, goalNum = zip(*thisList)
+
+# goals + assists
+# bar
+goalBars = [{
+    'type': 'bar',
+    'x': players,
+    'y': goals,
+    'name': 'goals',
+    'width': 0.5,
+    'marker_color': 'rgb(26, 118, 255)'
+    },
+
+    {
+    'type': 'bar',
+    'x': players,
+    'y': assists,
+    'name': 'assists',
+    'width': 0.5,
+    'marker_color': 'rgb(255, 118, 26)'
+    }]
+
+# scatter
+goalScatter = [{
+    'type': 'scatter',
+    'x': goals,
+    'y': assists,
+    'text': players,
+    'mode': 'markers',
+    'hoverinfo': 'text+x+y',
+    # 'textposition': 'bottom right',
     # 'size': 10,
     'marker': {
         'colorscale': 'Bluered',
@@ -94,7 +146,7 @@ barData = [{
     'marker_color': 'rgb(255, 118, 26)'
     }]
 
-barTable = {
+premTable = {
     'type': 'bar',
     'x': team,
     'y': points
@@ -122,6 +174,37 @@ scatLayout1 = {
 }
 
 barLayout = {
+    'title': 'Meaning in the Premier League',
+    'xaxis': {
+        'title': '',
+    },
+    'yaxis': {
+        'tickmode': 'linear',
+    },
+}
+
+gaBarLayout = {
+    'title': 'Meaning in the Premier League',
+    'xaxis': {
+        'title': '',
+    },
+    'yaxis': {
+        'tickmode': 'linear',
+    },
+    'barmode': 'stack'
+}
+
+gaScatLayout = {
+    'title': 'Goals and Assists in the Prem',
+    'xaxis': {
+        'title': 'Goals',
+    },
+    'yaxis': {
+        'title': 'Assists',
+    },
+}
+
+premLayout = {
     'title': 'Premier League 20/21 Table',
     'xaxis': {
         'title': '',
@@ -132,5 +215,7 @@ barLayout = {
 }
 
 offline.plot({'data': scatterData, 'layout': scatLayout}, filename='meaningInThePrem.html')
+offline.plot({'data': goalBars, 'layout': gaBarLayout}, filename='goalsANDassistsPremBar.html')
+offline.plot({'data': goalScatter, 'layout': gaScatLayout}, filename='goalsANDassistsPremScat.html')
 offline.plot({'data': barData, 'layout': barLayout}, filename='meaningInThePrem1.html')
-offline.plot({'data': barTable, 'layout': barLayout}, filename='premTable.html')
+offline.plot({'data': premTable, 'layout': premLayout}, filename='premTable.html')

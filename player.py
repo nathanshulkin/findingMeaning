@@ -3,14 +3,12 @@
 
 
 class Player:
-    def __init__(self, name, goals, assists, mGoals, mAssists, mAppear, mScore, mPoints):
+    def __init__(self, name, goals, assists, mGA, mAppear, mScore, mPoints):
         self.name = name
         self.goals = goals
         self.assists = assists
         self.GA = goals + assists
-        self.mGoals = mGoals
-        self.mAssists = mAssists
-        self.mGA = mGoals + mAssists
+        self.mGA = mGA
         self.mAppear = mAppear
         self.mScore = mScore
         self.mPoints = mPoints
@@ -26,12 +24,6 @@ class Player:
 
     def getGA(self):
         return self.GA
-
-    def getMeanG(self):
-        return self.mGoals
-
-    def getMeanA(self):
-        return self.mAssists
 
     def getMeanGA(self):
         return self.mGA
