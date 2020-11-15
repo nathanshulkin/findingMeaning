@@ -2,8 +2,6 @@
 # show some prem stuff using plotly
 
 # pip install plotly
-from plotly.graph_objs import Scatter, Bar
-from plotly.subplots import make_subplots
 from plotly import offline
 
 import premMeaning as pm
@@ -68,9 +66,8 @@ scatterData = [{
     # 'textposition': 'bottom right',
     # 'size': 10,
     'marker': {
-        'colorscale': 'Bluered',
-        'color': meanGA,
-        'colorbar': {'title': 'Value'},
+        'color': 'gold',
+        'symbol': 'circle-open-dot'
         }
     }]
 
@@ -84,9 +81,8 @@ scatterData1 = [{
     'mode': 'markers',
     # 'size': 10,
     'marker': {
-        'colorscale': 'Bluered',
-        'color': meanGA,
-        'colorbar': {'title': 'Value'},
+        'color': 'gold',
+        'symbol': 'circle-open-dot'
         }
     }]
 
@@ -125,9 +121,8 @@ goalScatter = [{
     'textposition': 'bottom right',
     # 'size': '10',
     'marker': {
-        'colorscale': 'Bluered',
-        'color': meanGA,
-        'colorbar': {'title': 'Value'},
+        'color': 'gold',
+        'symbol': 'circle-open-dot'
         }
 }]
 
@@ -160,16 +155,21 @@ ptDiffScat = [{
     'textposition': 'bottom right',
     # 'size': '10',
     'marker': {
-        'colorscale': 'Bluered',
-        'color': ptDiff,
-        'colorbar': {'title': 'Value'},
+        'color': 'gold',
+        'symbol': 'circle-open-dot'
         }
 }]
 
 premTable = {
     'type': 'bar',
     'x': team,
-    'y': points
+    'y': points,
+    'marker': {
+        'colorscale': 'bluered',
+        'color': points,
+        'colorbar': {'title': 'Value'},
+
+    }
 }
 
 # layout as dictionary/json for graph object
@@ -177,10 +177,14 @@ scatLayout = {
     'title': 'Meaning in the Prem',
     'xaxis': {
         'title': 'Total Goals/Assists',
+        'range': [0, 16]
     },
     'yaxis': {
         'title': 'Meaningful Goals/Assists',
+        'range': [0, 16]
     },
+    'template': 'plotly_dark'
+
 }
 
 scatLayout1 = {
@@ -191,6 +195,8 @@ scatLayout1 = {
     'yaxis': {
         'title': 'Meaningful Goals/Assists',
     },
+    'template': 'plotly_dark'
+
 }
 
 barLayout = {
@@ -201,6 +207,8 @@ barLayout = {
     'yaxis': {
         'tickmode': 'linear',
     },
+    'template': 'plotly_dark'
+
 }
 
 gaBarLayout = {
@@ -212,7 +220,9 @@ gaBarLayout = {
     'yaxis': {
         'tickmode': 'linear',
     },
-    'barmode': 'stack'
+    'barmode': 'stack',
+    'template': 'plotly_dark'
+
 }
 
 gaScatLayout = {
@@ -227,6 +237,8 @@ gaScatLayout = {
         'tickmode': 'linear',
         'range': [0, 10]
     },
+    'template': 'plotly_dark'
+
 }
 
 premLayout = {
@@ -237,6 +249,8 @@ premLayout = {
     'yaxis': {
         'tickmode': 'linear',
     },
+    'template': 'plotly_dark'
+
 }
 
 ptDiffLayout = {
@@ -247,6 +261,8 @@ ptDiffLayout = {
     'yaxis': {
         'tickmode': 'linear',
     },
+    'template': 'plotly_dark'
+
 }
 
 offline.plot({'data': scatterData, 'layout': scatLayout}, filename='meaningInThePrem.html')
