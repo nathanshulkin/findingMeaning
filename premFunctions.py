@@ -151,6 +151,7 @@ def findMeaning(prem, player, team, playerGA):
     totGA = 0
     meaningApp = 0
     meaningGA = 0
+    ptDiff = 0
 
     # iterate through teams in prem
     for daTeam in prem:
@@ -174,20 +175,23 @@ def findMeaning(prem, player, team, playerGA):
                         totPtsScore += playerGA[player][mw]
                         meaningApp += 1
                         meaningGA += playerGA[player][mw]
+                        ptDiff -= 1
                     # 2 points if team would've lost
                     else:
                         totScore += 2
                         totPtsScore += (2 * playerGA[player][mw])
                         meaningApp += 1
                         meaningGA += playerGA[player][mw]
+                        ptDiff -= 3
                 # 1 point for draw
                 if result == 'd':
                     totScore += 1
                     totPtsScore += playerGA[player][mw]
                     meaningApp += 1
                     meaningGA += playerGA[player][mw]
+                    ptDiff -= 1
                 # meaningless if lost
                 if result == 'l':
                     int(1)
 
-    return totScore, totPtsScore, totGA, meaningApp, meaningGA
+    return totScore, totPtsScore, totGA, meaningApp, meaningGA, ptDiff

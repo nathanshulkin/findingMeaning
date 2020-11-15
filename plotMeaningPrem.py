@@ -22,6 +22,7 @@ players = []
 team = []
 points = []
 teamPlayed = []
+ptDiff = []
 
 # get the data
 for i in range(len(pm.table)):
@@ -30,6 +31,7 @@ for i in range(len(pm.table)):
     meanApp.append(pm.daPlayers[i].getMeanApp())
     meanGA.append(pm.daPlayers[i].getMeanGA())
     totGA.append(pm.daPlayers[i].getGA())
+    ptDiff.append(pm.daPlayers[i].getPointDiff())
     try:
         meaningfulGApGame.append(pm.daPlayers[i].getMeanGA()/pm.daPlayers[i].getMeanApp())
     except ZeroDivisionError:
@@ -53,6 +55,7 @@ meanApp.reverse()
 meanScore.reverse()
 meanPoints.reverse()
 meaningfulGApGame.reverse()
+ptDiff.reverse()
 
 # scatter plot, color gradient
 scatterData = [{
@@ -119,14 +122,14 @@ goalScatter = [{
     'text': players,
     'mode': 'markers',
     'hoverinfo': 'text+x+y',
-    # 'textposition': 'bottom right',
-    # 'size': 10,
+    'textposition': 'bottom right',
+    # 'size': '10',
     'marker': {
         'colorscale': 'Bluered',
         'color': meanGA,
         'colorbar': {'title': 'Value'},
         }
-    }]
+}]
 
 barData = [{
     'type': 'bar',
@@ -145,6 +148,23 @@ barData = [{
     'width': 0.5,
     'marker_color': 'rgb(255, 118, 26)'
     }]
+
+# scatter
+ptDiffScat = [{
+    'type': 'scatter',
+    'x': players,
+    'y': ptDiff,
+    'text': ptDiff,
+    'mode': 'markers+text',
+    'hoverinfo': 'text+x',
+    'textposition': 'bottom right',
+    # 'size': '10',
+    'marker': {
+        'colorscale': 'Bluered',
+        'color': ptDiff,
+        'colorbar': {'title': 'Value'},
+        }
+}]
 
 premTable = {
     'type': 'bar',
@@ -184,9 +204,10 @@ barLayout = {
 }
 
 gaBarLayout = {
-    'title': 'Meaning in the Premier League',
+    'title': 'Goals and Assists in the Premier League',
     'xaxis': {
         'title': '',
+        'tickmode': 'linear'
     },
     'yaxis': {
         'tickmode': 'linear',
@@ -198,9 +219,13 @@ gaScatLayout = {
     'title': 'Goals and Assists in the Prem',
     'xaxis': {
         'title': 'Goals',
+        'tickmode': 'linear',
+        'range': [0, 10]
     },
     'yaxis': {
         'title': 'Assists',
+        'tickmode': 'linear',
+        'range': [0, 10]
     },
 }
 
@@ -214,8 +239,19 @@ premLayout = {
     },
 }
 
+ptDiffLayout = {
+    'title': 'Point Differentials',
+    'xaxis': {
+        'title': '',
+    },
+    'yaxis': {
+        'tickmode': 'linear',
+    },
+}
+
 offline.plot({'data': scatterData, 'layout': scatLayout}, filename='meaningInThePrem.html')
 offline.plot({'data': goalBars, 'layout': gaBarLayout}, filename='goalsANDassistsPremBar.html')
 offline.plot({'data': goalScatter, 'layout': gaScatLayout}, filename='goalsANDassistsPremScat.html')
 offline.plot({'data': barData, 'layout': barLayout}, filename='meaningInThePrem1.html')
 offline.plot({'data': premTable, 'layout': premLayout}, filename='premTable.html')
+offline.plot({'data': ptDiffScat, 'layout': ptDiffLayout}, filename='ptDiff.html')
