@@ -61,9 +61,9 @@ scatterData = [{
     'x': totGA,
     'y': meanGA,
     'text': players,
-    'mode': 'markers',
+    'mode': 'markers+text',
     'hoverinfo': 'text+x+y',
-    # 'textposition': 'bottom right',
+    'textposition': 'top center',
     # 'size': 10,
     'marker': {
         'color': 'gold',
@@ -116,7 +116,7 @@ goalScatter = [{
     'x': goals,
     'y': assists,
     'text': players,
-    'mode': 'markers',
+    'mode': 'markers+text',
     'hoverinfo': 'text+x+y',
     'textposition': 'bottom right',
     # 'size': '10',
@@ -152,7 +152,7 @@ ptDiffScat = [{
     'text': ptDiff,
     'mode': 'markers+text',
     'hoverinfo': 'text+x',
-    'textposition': 'bottom right',
+    'textposition': 'top center',
     # 'size': '10',
     'marker': {
         'color': 'gold',
@@ -160,12 +160,16 @@ ptDiffScat = [{
         }
 }]
 
+points.reverse()
+team.reverse()
+
 premTable = {
     'type': 'bar',
-    'x': team,
-    'y': points,
+    'x': points,
+    'y': team,
+    'orientation': 'h',
     'marker': {
-        'colorscale': 'bluered',
+        'colorscale': 'purples',
         'color': points,
         'colorbar': {'title': 'Value'},
 
@@ -174,10 +178,10 @@ premTable = {
 
 # layout as dictionary/json for graph object
 scatLayout = {
-    'title': 'Meaning in the Prem',
+    'title': 'Meaning in the Prem 20/21',
     'xaxis': {
         'title': 'Total Goals/Assists',
-        'range': [0, 16]
+        'range': [0, 18]
     },
     'yaxis': {
         'title': 'Meaningful Goals/Assists',
@@ -188,7 +192,7 @@ scatLayout = {
 }
 
 scatLayout1 = {
-    'title': 'Meaning in the Prem',
+    'title': 'Meaning in the Prem 20/21',
     'xaxis': {
         'title': 'Most Meaningful Players',
     },
@@ -200,7 +204,7 @@ scatLayout1 = {
 }
 
 barLayout = {
-    'title': 'Meaning in the Premier League',
+    'title': 'Meaning in the Premier League 20/21',
     'xaxis': {
         'title': '',
     },
@@ -212,7 +216,7 @@ barLayout = {
 }
 
 gaBarLayout = {
-    'title': 'Goals and Assists in the Premier League',
+    'title': 'Goals and Assists in the Premier League 20/21',
     'xaxis': {
         'title': '',
         'tickmode': 'linear'
@@ -226,7 +230,7 @@ gaBarLayout = {
 }
 
 gaScatLayout = {
-    'title': 'Goals and Assists in the Prem',
+    'title': 'Goals and Assists in the Prem 20/21',
     'xaxis': {
         'title': 'Goals',
         'tickmode': 'linear',
@@ -244,17 +248,17 @@ gaScatLayout = {
 premLayout = {
     'title': 'Premier League 20/21 Table',
     'xaxis': {
-        'title': '',
+        'tickmode': 'linear',
     },
     'yaxis': {
-        'tickmode': 'linear',
+        'title': '',
     },
     'template': 'plotly_dark'
 
 }
 
 ptDiffLayout = {
-    'title': 'Point Differentials',
+    'title': 'Point Differentials Prem Players 20/21',
     'xaxis': {
         'title': '',
     },
