@@ -118,7 +118,7 @@ goalScatter = [{
     'text': players,
     'mode': 'markers+text',
     'hoverinfo': 'text+x+y',
-    'textposition': 'bottom right',
+    'textposition': 'top center',
     # 'size': '10',
     'marker': {
         'color': 'gold',
@@ -219,7 +219,7 @@ gaBarLayout = {
     'title': 'Goals and Assists in the Premier League 20/21',
     'xaxis': {
         'title': '',
-        'tickmode': 'linear'
+        'tickmode': 'linear',
     },
     'yaxis': {
         'tickmode': 'linear',
@@ -234,7 +234,7 @@ gaScatLayout = {
     'xaxis': {
         'title': 'Goals',
         'tickmode': 'linear',
-        'range': [0, 10]
+        'range': [0, 12]
     },
     'yaxis': {
         'title': 'Assists',
