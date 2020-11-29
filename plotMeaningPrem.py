@@ -94,20 +94,22 @@ scatterData1 = [{
 # bar
 goalBars = [{
     'type': 'bar',
-    'x': players,
-    'y': goals,
+    'x': goals[5:],
+    'y': players[5:],
     'name': 'goals',
     'width': 0.5,
-    'marker_color': 'rgb(26, 118, 255)'
+    'orientation': 'h',
+    'marker_color': 'indigo'
     },
 
     {
     'type': 'bar',
-    'x': players,
-    'y': assists,
+    'x': assists[5:],
+    'y': players[5:],
     'name': 'assists',
     'width': 0.5,
-    'marker_color': 'rgb(255, 118, 26)'
+    'orientation': 'h',
+    'marker_color': 'mediumpurple'
     }]
 
 # scatter
@@ -132,7 +134,7 @@ barData = [{
     'y': meanGA,
     'name': 'meaningful goals/assists',
     'width': 0.5,
-    'marker_color': 'rgb(26, 118, 255)'
+    'marker_color': 'mediumpurple'
     },
 
     {
@@ -141,7 +143,7 @@ barData = [{
     'y': meanApp,
     'name': 'meaningful appearances',
     'width': 0.5,
-    'marker_color': 'rgb(255, 118, 26)'
+    'marker_color': 'gold'
     }]
 
 # scatter
@@ -222,7 +224,7 @@ gaBarLayout = {
         'tickmode': 'linear',
     },
     'yaxis': {
-        'tickmode': 'linear',
+        # 'tickmode': 'linear',
     },
     'barmode': 'stack',
     'template': 'plotly_dark'

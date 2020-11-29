@@ -71,5 +71,3 @@ for person in playersMW:
 # sort theMeaning
 daPlayers = sorted(daPlayers, key=lambda x: x.getGA(), reverse=True)
 
-
-
