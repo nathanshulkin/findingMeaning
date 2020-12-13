@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="cada1571-7907-4c25-958a-f693e227e7aa" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chLg.json" beforeDir="false" afterPath="$PROJECT_DIR$/chLg.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chmpMeaning.py" beforeDir="false" afterPath="$PROJECT_DIR$/chmpMeaning.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/goalsANDassistsPremBar.html" beforeDir="false" afterPath="$PROJECT_DIR$/goalsANDassistsPremBar.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/goalsANDassistsPremScat.html" beforeDir="false" afterPath="$PROJECT_DIR$/goalsANDassistsPremScat.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/meaningInThePrem.html" beforeDir="false" afterPath="$PROJECT_DIR$/meaningInThePrem.html" afterDir="false" />
@@ -26,8 +28,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/plotMeaningPrem.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2745">
-              <caret line="185" column="23" selection-start-line="185" selection-start-column="23" selection-end-line="185" selection-end-column="23" />
+            <state relative-caret-position="2295">
+              <caret line="155" column="20" selection-start-line="155" selection-start-column="20" selection-end-line="155" selection-end-column="20" />
               <folding>
                 <element signature="e#75#101#0" expanded="true" />
               </folding>
@@ -68,8 +70,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/prem2021.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="7515">
-              <caret line="501" column="65" selection-start-line="501" selection-start-column="65" selection-end-line="501" selection-end-column="65" />
+            <state relative-caret-position="5190">
+              <caret line="346" column="71" selection-start-line="346" selection-start-column="71" selection-end-line="346" selection-end-column="71" />
             </state>
           </provider>
         </entry>
@@ -77,8 +79,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/chmpMeaning.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="16" selection-start-column="16" selection-end-column="16" />
+            <state relative-caret-position="240">
+              <caret line="21" column="34" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="34" />
               <folding>
                 <element signature="e#62#73#0" expanded="true" />
               </folding>
@@ -89,8 +91,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/chLg.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="615">
-              <caret line="41" column="133" selection-start-line="41" selection-start-column="133" selection-end-line="41" selection-end-column="133" />
+            <state relative-caret-position="5790">
+              <caret line="386" column="84" selection-start-line="386" selection-start-column="84" selection-end-line="386" selection-end-column="84" />
             </state>
           </provider>
         </entry>
@@ -119,9 +121,9 @@
         <option value="$PROJECT_DIR$/prem1920.json" />
         <option value="$PROJECT_DIR$/premFunctions.py" />
         <option value="$PROJECT_DIR$/player.py" />
-        <option value="$PROJECT_DIR$/chmpMeaning.py" />
         <option value="$PROJECT_DIR$/premMeaning.py" />
         <option value="$PROJECT_DIR$/chLg.json" />
+        <option value="$PROJECT_DIR$/chmpMeaning.py" />
         <option value="$PROJECT_DIR$/plotMeaningPrem.py" />
         <option value="$PROJECT_DIR$/prem2021.json" />
       </list>
@@ -137,7 +139,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -149,6 +150,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -254,7 +256,7 @@
     <frame x="0" y="23" width="1280" height="749" extended-state="0" />
     <layout>
       <window_info id="Favorites" order="0" sideWeight="0.5022831" side_tool="true" weight="0.18012924" />
-      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.4977169" visible="true" weight="0.36591277" />
+      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.4977169" visible="true" weight="0.41518578" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="0" weight="0.32876712" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
@@ -262,7 +264,7 @@
       <window_info anchor="bottom" id="Message" order="3" />
       <window_info anchor="bottom" id="Find" order="4" />
       <window_info anchor="bottom" id="Version Control" order="5" weight="0.32876712" />
-      <window_info active="true" anchor="bottom" id="Run" order="6" visible="true" weight="0.304414" />
+      <window_info anchor="bottom" id="Run" order="6" weight="0.304414" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.39969605" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
@@ -287,8 +289,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/plotMeaningPrem.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2745">
-          <caret line="185" column="23" selection-start-line="185" selection-start-column="23" selection-end-line="185" selection-end-column="23" />
+        <state relative-caret-position="2295">
+          <caret line="155" column="20" selection-start-line="155" selection-start-column="20" selection-end-line="155" selection-end-column="20" />
           <folding>
             <element signature="e#75#101#0" expanded="true" />
           </folding>
@@ -321,8 +323,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/chmpMeaning.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="16" selection-start-column="16" selection-end-column="16" />
+        <state relative-caret-position="240">
+          <caret line="21" column="34" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="34" />
           <folding>
             <element signature="e#62#73#0" expanded="true" />
           </folding>
@@ -331,15 +333,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/chLg.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="615">
-          <caret line="41" column="133" selection-start-line="41" selection-start-column="133" selection-end-line="41" selection-end-column="133" />
+        <state relative-caret-position="5790">
+          <caret line="386" column="84" selection-start-line="386" selection-start-column="84" selection-end-line="386" selection-end-column="84" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/prem2021.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7515">
-          <caret line="501" column="65" selection-start-line="501" selection-start-column="65" selection-end-line="501" selection-end-column="65" />
+        <state relative-caret-position="5190">
+          <caret line="346" column="71" selection-start-line="346" selection-start-column="71" selection-end-line="346" selection-end-column="71" />
         </state>
       </provider>
     </entry>

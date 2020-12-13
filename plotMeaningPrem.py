@@ -23,7 +23,7 @@ teamPlayed = []
 ptDiff = []
 
 # get the data
-for i in range(len(pm.table)):
+for i in range(len(pm.daPlayers)):
     meanScore.append(pm.daPlayers[i].getMeanScore())
     meanPoints.append(pm.daPlayers[i].getMeanPoints())
     meanApp.append(pm.daPlayers[i].getMeanApp())
@@ -36,9 +36,12 @@ for i in range(len(pm.table)):
         meaningfulGApGame.append(0)
     players.append(pm.daPlayers[i].getName())
 
-    team.append(pm.table[i][0])
-    points.append(pm.table[i][1][0])
-    teamPlayed.append(pm.table[i][1][1])
+    try:
+        team.append(pm.table[i][0])
+        points.append(pm.table[i][1][0])
+        teamPlayed.append(pm.table[i][1][1])
+    except IndexError:
+        int(1)
 
     goals.append(pm.daPlayers[i].getGoals())
     assists.append(pm.daPlayers[i].getAssists())
@@ -58,9 +61,9 @@ ptDiff.reverse()
 # scatter plot, color gradient
 scatterData = [{
     'type': 'scatter',
-    'x': totGA,
-    'y': meanGA,
-    'text': players,
+    'x': totGA[-25:],
+    'y': meanGA[-25:],
+    'text': players[-25:],
     'mode': 'markers+text',
     'hoverinfo': 'text+x+y',
     'textposition': 'top center',
@@ -94,8 +97,8 @@ scatterData1 = [{
 # bar
 goalBars = [{
     'type': 'bar',
-    'x': goals[5:],
-    'y': players[5:],
+    'x': goals[-22:],
+    'y': players[-22:],
     'name': 'goals',
     'width': 0.5,
     'orientation': 'h',
@@ -104,8 +107,8 @@ goalBars = [{
 
     {
     'type': 'bar',
-    'x': assists[5:],
-    'y': players[5:],
+    'x': assists[-22:],
+    'y': players[-22:],
     'name': 'assists',
     'width': 0.5,
     'orientation': 'h',
@@ -115,9 +118,9 @@ goalBars = [{
 # scatter
 goalScatter = [{
     'type': 'scatter',
-    'x': goals,
-    'y': assists,
-    'text': players,
+    'x': goals[-30:],
+    'y': assists[-30:],
+    'text': players[-30:],
     'mode': 'markers+text',
     'hoverinfo': 'text+x+y',
     'textposition': 'top center',
@@ -130,8 +133,8 @@ goalScatter = [{
 
 barData = [{
     'type': 'bar',
-    'x': players,
-    'y': meanGA,
+    'x': players[-22:],
+    'y': meanGA[-22:],
     'name': 'meaningful goals/assists',
     'width': 0.5,
     'marker_color': 'mediumpurple'
@@ -139,8 +142,8 @@ barData = [{
 
     {
     'type': 'bar',
-    'x': players,
-    'y': meanApp,
+    'x': players[-22:],
+    'y': meanApp[-22:],
     'name': 'meaningful appearances',
     'width': 0.5,
     'marker_color': 'gold'
@@ -149,9 +152,9 @@ barData = [{
 # scatter
 ptDiffScat = [{
     'type': 'scatter',
-    'x': players,
-    'y': ptDiff,
-    'text': ptDiff,
+    'x': players[-30:],
+    'y': ptDiff[-30:],
+    'text': ptDiff[-30:],
     'mode': 'markers+text',
     'hoverinfo': 'text+x',
     'textposition': 'top center',
