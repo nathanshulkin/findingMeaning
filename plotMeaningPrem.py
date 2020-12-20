@@ -41,7 +41,7 @@ for i in range(len(pm.daPlayers)):
         points.append(pm.table[i][1][0])
         teamPlayed.append(pm.table[i][1][1])
     except IndexError:
-        int(1)
+        True
 
     goals.append(pm.daPlayers[i].getGoals())
     assists.append(pm.daPlayers[i].getAssists())
@@ -239,12 +239,12 @@ gaScatLayout = {
     'xaxis': {
         'title': 'Goals',
         'tickmode': 'linear',
-        'range': [0, 12]
+        'range': [0, 14]
     },
     'yaxis': {
         'title': 'Assists',
         'tickmode': 'linear',
-        'range': [0, 12]
+        'range': [0, 14]
     },
     'template': 'plotly_dark'
 

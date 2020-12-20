@@ -168,7 +168,7 @@ def findMeaning(prem, player, team, playerGA):
                     after = prem[team][mw]['mScore'] - playerGA[player][mw]
                     # meaningless
                     if after > prem[team][mw]['oScore']:
-                        int(1)
+                        True
                     # 1 point if team would've tied
                     elif after == prem[team][mw]['oScore']:
                         totScore += 1
@@ -192,6 +192,6 @@ def findMeaning(prem, player, team, playerGA):
                     ptDiff -= 1
                 # meaningless if lost
                 if result == 'l':
-                    int(1)
+                    True
 
     return totScore, totPtsScore, totGA, meaningApp, meaningGA, ptDiff
