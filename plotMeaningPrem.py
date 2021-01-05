@@ -152,9 +152,9 @@ barData = [{
 # scatter
 ptDiffScat = [{
     'type': 'scatter',
-    'x': players[-30:],
-    'y': ptDiff[-30:],
-    'text': ptDiff[-30:],
+    'x': players[-40:],
+    'y': ptDiff[-40:],
+    'text': ptDiff[-40:],
     'mode': 'markers+text',
     'hoverinfo': 'text+x',
     'textposition': 'top center',
@@ -186,11 +186,11 @@ scatLayout = {
     'title': 'Meaning in the Prem 20/21',
     'xaxis': {
         'title': 'Total Goals/Assists',
-        'range': [0, 20]
+        'range': [0, 22]
     },
     'yaxis': {
         'title': 'Meaningful Goals/Assists',
-        'range': [0, 16]
+        'range': [0, 18]
     },
     'template': 'plotly_dark'
 
@@ -239,12 +239,12 @@ gaScatLayout = {
     'xaxis': {
         'title': 'Goals',
         'tickmode': 'linear',
-        'range': [0, 14]
+        'range': [0, 15]
     },
     'yaxis': {
         'title': 'Assists',
         'tickmode': 'linear',
-        'range': [0, 14]
+        'range': [0, 15]
     },
     'template': 'plotly_dark'
 
