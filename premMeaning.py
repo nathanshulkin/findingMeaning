@@ -66,7 +66,7 @@ for person in playersMW:
             score, ptsScore, GATot, appMeaning, gaMeaning, ptDiff = premFunctions.findMeaning(prem2021, person, team, playersMW)
             # create players
             daPlayers.append(Player(person, goalsANDassists[person][0], goalsANDassists[person][1], gaMeaning,
-                                    appMeaning, score, ptsScore, ptDiff))
+                                    appMeaning, score, ptsScore, ptDiff, team))
 
 # sort theMeaning
 daPlayers = sorted(daPlayers, key=lambda x: x.getGA(), reverse=True)

@@ -20,7 +20,11 @@ players = []
 team = []
 points = []
 teamPlayed = []
+teamGD = []
+teamGS = []
+teamGA = []
 ptDiff = []
+playerTeam = []
 
 # get the data
 for i in range(len(pm.daPlayers)):
@@ -30,6 +34,7 @@ for i in range(len(pm.daPlayers)):
     meanGA.append(pm.daPlayers[i].getMeanGA())
     totGA.append(pm.daPlayers[i].getGA())
     ptDiff.append(pm.daPlayers[i].getPointDiff())
+    playerTeam.append(pm.daPlayers[i].getTeam())
     try:
         meaningfulGApGame.append(pm.daPlayers[i].getMeanGA()/pm.daPlayers[i].getMeanApp())
     except ZeroDivisionError:
@@ -39,7 +44,10 @@ for i in range(len(pm.daPlayers)):
     try:
         team.append(pm.table[i][0])
         points.append(pm.table[i][1][0])
-        teamPlayed.append(pm.table[i][1][1])
+        teamGD.append(pm.table[i][1][1])
+        teamGS.append(pm.table[i][1][3])
+        teamGA.append(pm.table[i][1][4])
+        teamPlayed.append(pm.table[i][1][2])
     except IndexError:
         True
 
@@ -57,8 +65,14 @@ meanScore.reverse()
 meanPoints.reverse()
 meaningfulGApGame.reverse()
 ptDiff.reverse()
+playerTeam.reverse()
+
+points.reverse()
+team.reverse()
 
 # scatter plot, color gradient
+
+# meaning in the prem
 scatterData = [{
     'type': 'scatter',
     'x': totGA[-25:],
@@ -73,6 +87,21 @@ scatterData = [{
         'symbol': 'circle-open-dot'
         }
     }]
+
+# layout as dictionary/json for graph object
+scatLayout = {
+    'title': 'Meaning in the Prem 20/21',
+    'xaxis': {
+        'title': 'Total Goals/Assists',
+        'range': [0, 25]
+    },
+    'yaxis': {
+        'title': 'Meaningful Goals/Assists',
+        'range': [0, 20]
+    },
+    'template': 'plotly_dark'
+
+}
 
 
 # ratio of meaningful goals/game
@@ -94,6 +123,7 @@ scatterData1 = [{
 # scorers, goalNum = zip(*thisList)
 
 # goals + assists
+# total
 # bar
 goalBars = [{
     'type': 'bar',
@@ -115,6 +145,23 @@ goalBars = [{
     'marker_color': 'mediumpurple'
     }]
 
+# layout
+gaBarLayout = {
+    'title': 'Goals and Assists in the Premier League 20/21',
+    'xaxis': {
+        'title': '',
+        'tickmode': 'linear',
+    },
+    'yaxis': {
+        # 'tickmode': 'linear',
+    },
+    'barmode': 'stack',
+    'template': 'plotly_dark'
+
+}
+
+
+# total
 # scatter
 goalScatter = [{
     'type': 'scatter',
@@ -131,6 +178,24 @@ goalScatter = [{
         }
 }]
 
+# layout
+gaScatLayout = {
+    'title': 'Goals and Assists in the Prem 20/21',
+    'xaxis': {
+        'title': 'Goals',
+        'tickmode': 'linear',
+        'range': [0, 15]
+    },
+    'yaxis': {
+        'title': 'Assists',
+        'tickmode': 'linear',
+        'range': [0, 15]
+    },
+    'template': 'plotly_dark'
+
+}
+
+# meaningful GAs vs meaningful apps
 barData = [{
     'type': 'bar',
     'x': players[-22:],
@@ -149,6 +214,21 @@ barData = [{
     'marker_color': 'gold'
     }]
 
+# layout
+barLayout = {
+    'title': 'Meaning in the Premier League 20/21',
+    'xaxis': {
+        'title': '',
+    },
+    'yaxis': {
+        'tickmode': 'linear',
+    },
+    'template': 'plotly_dark'
+
+}
+
+
+# point differentials for goal contributions
 # scatter
 ptDiffScat = [{
     'type': 'scatter',
@@ -165,9 +245,20 @@ ptDiffScat = [{
         }
 }]
 
-points.reverse()
-team.reverse()
+ptDiffLayout = {
+    'title': 'Point Differentials Prem Players 20/21',
+    'xaxis': {
+        'title': '',
+    },
+    'yaxis': {
+        'tickmode': 'linear',
+    },
+    'template': 'plotly_dark'
 
+}
+
+
+# prem table
 premTable = {
     'type': 'bar',
     'x': points,
@@ -179,75 +270,6 @@ premTable = {
         'colorbar': {'title': 'Value'},
 
     }
-}
-
-# layout as dictionary/json for graph object
-scatLayout = {
-    'title': 'Meaning in the Prem 20/21',
-    'xaxis': {
-        'title': 'Total Goals/Assists',
-        'range': [0, 22]
-    },
-    'yaxis': {
-        'title': 'Meaningful Goals/Assists',
-        'range': [0, 18]
-    },
-    'template': 'plotly_dark'
-
-}
-
-scatLayout1 = {
-    'title': 'Meaning in the Prem 20/21',
-    'xaxis': {
-        'title': 'Most Meaningful Players',
-    },
-    'yaxis': {
-        'title': 'Meaningful Goals/Assists',
-    },
-    'template': 'plotly_dark'
-
-}
-
-barLayout = {
-    'title': 'Meaning in the Premier League 20/21',
-    'xaxis': {
-        'title': '',
-    },
-    'yaxis': {
-        'tickmode': 'linear',
-    },
-    'template': 'plotly_dark'
-
-}
-
-gaBarLayout = {
-    'title': 'Goals and Assists in the Premier League 20/21',
-    'xaxis': {
-        'title': '',
-        'tickmode': 'linear',
-    },
-    'yaxis': {
-        # 'tickmode': 'linear',
-    },
-    'barmode': 'stack',
-    'template': 'plotly_dark'
-
-}
-
-gaScatLayout = {
-    'title': 'Goals and Assists in the Prem 20/21',
-    'xaxis': {
-        'title': 'Goals',
-        'tickmode': 'linear',
-        'range': [0, 15]
-    },
-    'yaxis': {
-        'title': 'Assists',
-        'tickmode': 'linear',
-        'range': [0, 15]
-    },
-    'template': 'plotly_dark'
-
 }
 
 premLayout = {
@@ -262,17 +284,34 @@ premLayout = {
 
 }
 
-ptDiffLayout = {
-    'title': 'Point Differentials Prem Players 20/21',
+
+# i dont know
+
+# ratio of meaningful goals/game
+scatterData1 = [{
+    'type': 'scatter',
+    'x': players,
+    'y': meanGA,
+    # 'text': players,
+    'mode': 'markers',
+    # 'size': 10,
+    'marker': {
+        'color': 'gold',
+        'symbol': 'circle-open-dot'
+        }
+    }]
+scatLayout1 = {
+    'title': 'Meaning in the Prem 20/21',
     'xaxis': {
-        'title': '',
+        'title': 'Most Meaningful Players',
     },
     'yaxis': {
-        'tickmode': 'linear',
+        'title': 'Meaningful Goals/Assists',
     },
     'template': 'plotly_dark'
 
 }
+
 
 offline.plot({'data': scatterData, 'layout': scatLayout}, filename='meaningInThePrem.html')
 offline.plot({'data': goalBars, 'layout': gaBarLayout}, filename='goalsANDassistsPremBar.html')

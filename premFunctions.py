@@ -9,11 +9,15 @@ def displayTable(prem):
     table = {}
     for team in prem:
         gd = 0
+        gs = 0
+        ga = 0
         points = 0
         played = 0
         for mw in prem[team]:
             # match played
             played += 1
+            gs += prem[team][mw]['mScore']
+            ga += prem[team][mw]['oScore']
             # 3 points for a win
             if prem[team][mw]['result'] == 'w':
                 points += 3
@@ -28,7 +32,7 @@ def displayTable(prem):
                 gd += (prem[team][mw]['mScore'] - prem[team][mw]['oScore'])
         # print(gd)
         # table[str(team)+'gd'] = gd
-        table[team] = [points, gd, played]
+        table[team] = [points, gd, played, gs, ga]
 
     # sort table
     table = sorted(table.items(), key=lambda x: x[1], reverse=True)
