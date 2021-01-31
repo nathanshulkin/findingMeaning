@@ -7,6 +7,7 @@
       <change beforePath="$PROJECT_DIR$/goalsANDassistsPremScat.html" beforeDir="false" afterPath="$PROJECT_DIR$/goalsANDassistsPremScat.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/meaningInThePrem.html" beforeDir="false" afterPath="$PROJECT_DIR$/meaningInThePrem.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/meaningInThePrem1.html" beforeDir="false" afterPath="$PROJECT_DIR$/meaningInThePrem1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plotMeaningPrem.py" beforeDir="false" afterPath="$PROJECT_DIR$/plotMeaningPrem.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/prem2021.json" beforeDir="false" afterPath="$PROJECT_DIR$/prem2021.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/premTable.html" beforeDir="false" afterPath="$PROJECT_DIR$/premTable.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ptDiff.html" beforeDir="false" afterPath="$PROJECT_DIR$/ptDiff.html" afterDir="false" />
@@ -22,11 +23,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/plotMeaningPrem.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3840">
-              <caret line="258" selection-start-line="258" selection-end-line="258" />
+            <state relative-caret-position="2865">
+              <caret line="191" column="23" selection-start-line="191" selection-start-column="23" selection-end-line="191" selection-end-column="23" />
               <folding>
                 <element signature="e#75#101#0" expanded="true" />
               </folding>
@@ -64,11 +65,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/prem2021.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6166">
-              <caret line="633" column="78" selection-start-line="633" selection-start-column="78" selection-end-line="633" selection-end-column="78" />
+            <state relative-caret-position="8655">
+              <caret line="577" column="72" selection-start-line="577" selection-start-column="72" selection-end-line="577" selection-end-column="72" />
             </state>
           </provider>
         </entry>
@@ -124,8 +125,8 @@
         <option value="$PROJECT_DIR$/premFunctions.py" />
         <option value="$PROJECT_DIR$/player.py" />
         <option value="$PROJECT_DIR$/premMeaning.py" />
-        <option value="$PROJECT_DIR$/plotMeaningPrem.py" />
         <option value="$PROJECT_DIR$/prem2021.json" />
+        <option value="$PROJECT_DIR$/plotMeaningPrem.py" />
       </list>
     </option>
   </component>
@@ -274,16 +275,6 @@
     <entry file="file://$PROJECT_DIR$/meaningInThePrem1.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/plotMeaningPrem.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3840">
-          <caret line="258" selection-start-line="258" selection-end-line="258" />
-          <folding>
-            <element signature="e#75#101#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/premMeaning.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="915">
@@ -327,8 +318,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/prem2021.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6166">
-          <caret line="633" column="78" selection-start-line="633" selection-start-column="78" selection-end-line="633" selection-end-column="78" />
+        <state relative-caret-position="8655">
+          <caret line="577" column="72" selection-start-line="577" selection-start-column="72" selection-end-line="577" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plotMeaningPrem.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2865">
+          <caret line="191" column="23" selection-start-line="191" selection-start-column="23" selection-end-line="191" selection-end-column="23" />
+          <folding>
+            <element signature="e#75#101#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
