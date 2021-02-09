@@ -23,11 +23,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/plotMeaningPrem.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2865">
-              <caret line="191" column="23" selection-start-line="191" selection-start-column="23" selection-end-line="191" selection-end-column="23" />
+            <state relative-caret-position="165">
+              <caret line="186" column="23" selection-start-line="186" selection-start-column="23" selection-end-line="186" selection-end-column="23" />
               <folding>
                 <element signature="e#75#101#0" expanded="true" />
               </folding>
@@ -59,17 +59,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/player.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="630">
+            <state relative-caret-position="382">
               <caret line="42" column="26" selection-start-line="42" selection-start-column="26" selection-end-line="42" selection-end-column="26" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/prem2021.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="8655">
-              <caret line="577" column="72" selection-start-line="577" selection-start-column="72" selection-end-line="577" selection-end-column="72" />
+            <state relative-caret-position="8925">
+              <caret line="595" column="59" selection-start-line="595" selection-start-column="59" selection-end-line="595" selection-end-column="59" />
             </state>
           </provider>
         </entry>
@@ -125,8 +125,8 @@
         <option value="$PROJECT_DIR$/premFunctions.py" />
         <option value="$PROJECT_DIR$/player.py" />
         <option value="$PROJECT_DIR$/premMeaning.py" />
-        <option value="$PROJECT_DIR$/prem2021.json" />
         <option value="$PROJECT_DIR$/plotMeaningPrem.py" />
+        <option value="$PROJECT_DIR$/prem2021.json" />
       </list>
     </option>
   </component>
@@ -139,7 +139,10 @@
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes />
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane" />
+    </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -244,7 +247,7 @@
     <frame x="0" y="23" width="1280" height="751" extended-state="0" />
     <layout>
       <window_info id="Favorites" order="0" sideWeight="0.5022831" side_tool="true" weight="0.18012924" />
-      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.4977169" weight="0.23021002" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.4977169" visible="true" weight="0.23021002" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="0" weight="0.32876712" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
@@ -275,6 +278,16 @@
     <entry file="file://$PROJECT_DIR$/meaningInThePrem1.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/plotMeaningPrem.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="186" column="23" selection-start-line="186" selection-start-column="23" selection-end-line="186" selection-end-column="23" />
+          <folding>
+            <element signature="e#75#101#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/premMeaning.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="915">
@@ -289,13 +302,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
           <caret line="34" column="41" selection-start-line="34" selection-start-column="35" selection-end-line="34" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/player.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="42" column="26" selection-start-line="42" selection-start-column="26" selection-end-line="42" selection-end-column="26" />
         </state>
       </provider>
     </entry>
@@ -316,20 +322,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/prem2021.json">
+    <entry file="file://$PROJECT_DIR$/player.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8655">
-          <caret line="577" column="72" selection-start-line="577" selection-start-column="72" selection-end-line="577" selection-end-column="72" />
+        <state relative-caret-position="382">
+          <caret line="42" column="26" selection-start-line="42" selection-start-column="26" selection-end-line="42" selection-end-column="26" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/plotMeaningPrem.py">
+    <entry file="file://$PROJECT_DIR$/prem2021.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2865">
-          <caret line="191" column="23" selection-start-line="191" selection-start-column="23" selection-end-line="191" selection-end-column="23" />
-          <folding>
-            <element signature="e#75#101#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="8925">
+          <caret line="595" column="59" selection-start-line="595" selection-start-column="59" selection-end-line="595" selection-end-column="59" />
         </state>
       </provider>
     </entry>

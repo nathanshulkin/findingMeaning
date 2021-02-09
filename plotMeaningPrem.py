@@ -184,12 +184,12 @@ gaScatLayout = {
     'xaxis': {
         'title': 'Goals',
         'tickmode': 'linear',
-        'range': [0, 16]
+        'range': [0, 17]
     },
     'yaxis': {
         'title': 'Assists',
         'tickmode': 'linear',
-        'range': [0, 16]
+        'range': [0, 17]
     },
     'template': 'plotly_dark'
 
