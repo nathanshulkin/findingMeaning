@@ -7,8 +7,11 @@
       <change beforePath="$PROJECT_DIR$/goalsANDassistsPremScat.html" beforeDir="false" afterPath="$PROJECT_DIR$/goalsANDassistsPremScat.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/meaningInThePrem.html" beforeDir="false" afterPath="$PROJECT_DIR$/meaningInThePrem.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/meaningInThePrem1.html" beforeDir="false" afterPath="$PROJECT_DIR$/meaningInThePrem1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/player.py" beforeDir="false" afterPath="$PROJECT_DIR$/player.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/plotMeaningPrem.py" beforeDir="false" afterPath="$PROJECT_DIR$/plotMeaningPrem.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/prem2021.json" beforeDir="false" afterPath="$PROJECT_DIR$/prem2021.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/premFunctions.py" beforeDir="false" afterPath="$PROJECT_DIR$/premFunctions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/premMeaning.py" beforeDir="false" afterPath="$PROJECT_DIR$/premMeaning.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/premTable.html" beforeDir="false" afterPath="$PROJECT_DIR$/premTable.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ptDiff.html" beforeDir="false" afterPath="$PROJECT_DIR$/ptDiff.html" afterDir="false" />
     </list>
@@ -26,8 +29,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/plotMeaningPrem.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="186" column="23" selection-start-line="186" selection-start-column="23" selection-end-line="186" selection-end-column="23" />
+            <state relative-caret-position="3450">
+              <caret line="232" selection-start-line="232" selection-end-line="232" />
               <folding>
                 <element signature="e#75#101#0" expanded="true" />
               </folding>
@@ -38,8 +41,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/premMeaning.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="915">
-              <caret line="64" column="31" selection-start-line="64" selection-start-column="31" selection-end-line="64" selection-end-column="31" />
+            <state relative-caret-position="975">
+              <caret line="68" column="87" selection-start-line="68" selection-start-column="87" selection-end-line="68" selection-end-column="87" />
               <folding>
                 <element signature="e#28#39#0" expanded="true" />
               </folding>
@@ -50,8 +53,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/premFunctions.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="34" column="41" selection-start-line="34" selection-start-column="35" selection-end-line="34" selection-end-column="41" />
+            <state relative-caret-position="3045">
+              <caret line="203" column="86" selection-start-line="203" selection-start-column="86" selection-end-line="203" selection-end-column="86" />
             </state>
           </provider>
         </entry>
@@ -59,8 +62,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/player.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="382">
-              <caret line="42" column="26" selection-start-line="42" selection-start-column="26" selection-end-line="42" selection-end-column="26" />
+            <state relative-caret-position="690">
+              <caret line="46" column="26" selection-start-line="46" selection-start-column="26" selection-end-line="46" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -68,8 +71,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/prem2021.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="8925">
-              <caret line="595" column="59" selection-start-line="595" selection-start-column="59" selection-end-line="595" selection-end-column="59" />
+            <state relative-caret-position="360">
+              <caret line="24" column="49" lean-forward="true" selection-start-line="24" selection-start-column="49" selection-end-line="24" selection-end-column="49" />
             </state>
           </provider>
         </entry>
@@ -111,6 +114,7 @@
       <find>newca</find>
       <find>manc</find>
       <find>de bruyne</find>
+      <find>24</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -123,8 +127,8 @@
         <option value="$PROJECT_DIR$/chLg.json" />
         <option value="$PROJECT_DIR$/chmpMeaning.py" />
         <option value="$PROJECT_DIR$/premFunctions.py" />
-        <option value="$PROJECT_DIR$/player.py" />
         <option value="$PROJECT_DIR$/premMeaning.py" />
+        <option value="$PROJECT_DIR$/player.py" />
         <option value="$PROJECT_DIR$/plotMeaningPrem.py" />
         <option value="$PROJECT_DIR$/prem2021.json" />
       </list>
@@ -140,8 +144,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -247,7 +251,7 @@
     <frame x="0" y="23" width="1280" height="751" extended-state="0" />
     <layout>
       <window_info id="Favorites" order="0" sideWeight="0.5022831" side_tool="true" weight="0.18012924" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.4977169" visible="true" weight="0.23021002" />
+      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.4977169" visible="true" weight="0.25605816" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="0" weight="0.32876712" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
@@ -280,8 +284,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/plotMeaningPrem.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="186" column="23" selection-start-line="186" selection-start-column="23" selection-end-line="186" selection-end-column="23" />
+        <state relative-caret-position="3450">
+          <caret line="232" selection-start-line="232" selection-end-line="232" />
           <folding>
             <element signature="e#75#101#0" expanded="true" />
           </folding>
@@ -290,8 +294,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/premMeaning.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="915">
-          <caret line="64" column="31" selection-start-line="64" selection-start-column="31" selection-end-line="64" selection-end-column="31" />
+        <state relative-caret-position="975">
+          <caret line="68" column="87" selection-start-line="68" selection-start-column="87" selection-end-line="68" selection-end-column="87" />
           <folding>
             <element signature="e#28#39#0" expanded="true" />
           </folding>
@@ -300,8 +304,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/premFunctions.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="34" column="41" selection-start-line="34" selection-start-column="35" selection-end-line="34" selection-end-column="41" />
+        <state relative-caret-position="3045">
+          <caret line="203" column="86" selection-start-line="203" selection-start-column="86" selection-end-line="203" selection-end-column="86" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/player.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="690">
+          <caret line="46" column="26" selection-start-line="46" selection-start-column="26" selection-end-line="46" selection-end-column="26" />
         </state>
       </provider>
     </entry>
@@ -322,17 +333,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/player.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="382">
-          <caret line="42" column="26" selection-start-line="42" selection-start-column="26" selection-end-line="42" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/prem2021.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8925">
-          <caret line="595" column="59" selection-start-line="595" selection-start-column="59" selection-end-line="595" selection-end-column="59" />
+        <state relative-caret-position="360">
+          <caret line="24" column="49" lean-forward="true" selection-start-line="24" selection-start-column="49" selection-end-line="24" selection-end-column="49" />
         </state>
       </provider>
     </entry>

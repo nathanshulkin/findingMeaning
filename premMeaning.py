@@ -63,10 +63,10 @@ print('\n\n')
 for person in playersMW:
     for team in teams:
         if person in teams[team]:
-            score, ptsScore, GATot, appMeaning, gaMeaning, ptDiff = premFunctions.findMeaning(prem2021, person, team, playersMW)
+            score, ptsScore, GATot, appMeaning, gaMeaning, ptDiff, ptContribute = premFunctions.findMeaning(prem2021, person, team, playersMW)
             # create players
             daPlayers.append(Player(person, goalsANDassists[person][0], goalsANDassists[person][1], gaMeaning,
-                                    appMeaning, score, ptsScore, ptDiff, team))
+                                    appMeaning, score, ptsScore, ptDiff, ptContribute, team))
 
 # sort theMeaning
 daPlayers = sorted(daPlayers, key=lambda x: x.getGA(), reverse=True)

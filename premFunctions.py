@@ -156,6 +156,7 @@ def findMeaning(prem, player, team, playerGA):
     meaningApp = 0
     meaningGA = 0
     ptDiff = 0
+    ptsContributed = 0
 
     # iterate through teams in prem
     for daTeam in prem:
@@ -170,6 +171,7 @@ def findMeaning(prem, player, team, playerGA):
                 # if win take away goals and see if meaningful
                 if result == 'w':
                     after = prem[team][mw]['mScore'] - playerGA[player][mw]
+                    ptsContributed += 3
                     # meaningless
                     if after > prem[team][mw]['oScore']:
                         True
@@ -194,8 +196,9 @@ def findMeaning(prem, player, team, playerGA):
                     meaningApp += 1
                     meaningGA += playerGA[player][mw]
                     ptDiff -= 1
+                    ptsContributed += 1
                 # meaningless if lost
                 if result == 'l':
                     True
 
-    return totScore, totPtsScore, totGA, meaningApp, meaningGA, ptDiff
+    return totScore, totPtsScore, totGA, meaningApp, meaningGA, ptDiff, ptsContributed

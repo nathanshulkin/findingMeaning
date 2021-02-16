@@ -3,7 +3,7 @@
 
 
 class Player:
-    def __init__(self, name, goals, assists, mGA, mAppear, mScore, mPoints, ptDiff, team):
+    def __init__(self, name, goals, assists, mGA, mAppear, mScore, mPoints, ptDiff, ptCont, team):
         self.name = name
         self.goals = goals
         self.assists = assists
@@ -13,6 +13,7 @@ class Player:
         self.mScore = mScore
         self.mPoints = mPoints
         self.ptDiff = ptDiff
+        self.ptCont = ptCont
         self.team = team
 
     def getName(self):
@@ -41,6 +42,9 @@ class Player:
 
     def getPointDiff(self):
         return self.ptDiff
+
+    def getPointContribute(self):
+        return self.ptCont
 
     def getTeam(self):
         return self.team

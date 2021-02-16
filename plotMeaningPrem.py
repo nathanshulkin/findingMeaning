@@ -24,6 +24,7 @@ teamGD = []
 teamGS = []
 teamGA = []
 ptDiff = []
+ptContributed = []
 playerTeam = []
 
 # get the data
@@ -34,6 +35,7 @@ for i in range(len(pm.daPlayers)):
     meanGA.append(pm.daPlayers[i].getMeanGA())
     totGA.append(pm.daPlayers[i].getGA())
     ptDiff.append(pm.daPlayers[i].getPointDiff())
+    ptContributed.append((pm.daPlayers[i].getPointContribute()))
     playerTeam.append(pm.daPlayers[i].getTeam())
     try:
         meaningfulGApGame.append(pm.daPlayers[i].getMeanGA()/pm.daPlayers[i].getMeanApp())
@@ -65,6 +67,7 @@ meanScore.reverse()
 meanPoints.reverse()
 meaningfulGApGame.reverse()
 ptDiff.reverse()
+ptContributed.reverse()
 playerTeam.reverse()
 
 points.reverse()
@@ -184,12 +187,12 @@ gaScatLayout = {
     'xaxis': {
         'title': 'Goals',
         'tickmode': 'linear',
-        'range': [0, 17]
+        'range': [0, 18]
     },
     'yaxis': {
         'title': 'Assists',
         'tickmode': 'linear',
-        'range': [0, 17]
+        'range': [0, 18]
     },
     'template': 'plotly_dark'
 
@@ -217,6 +220,36 @@ barData = [{
 # layout
 barLayout = {
     'title': 'Meaning in the Premier League 20/21',
+    'xaxis': {
+        'title': '',
+    },
+    'yaxis': {
+        'tickmode': 'linear',
+    },
+    'template': 'plotly_dark'
+
+}
+
+
+# points contributed for goal/assits contributions
+# scatter
+ptContScat = [{
+    'type': 'scatter',
+    'x': players[-40:],
+    'y': ptContributed[-40:],
+    'text': ptContributed[-40:],
+    'mode': 'markers+text',
+    'hoverinfo': 'text+x',
+    'textposition': 'top center',
+    # 'size': '10',
+    'marker': {
+        'color': 'gold',
+        'symbol': 'circle-open-dot'
+        }
+}]
+
+ptContLayout = {
+    'title': 'Points Conrtributed Prem Players 20/21',
     'xaxis': {
         'title': '',
     },
@@ -319,3 +352,4 @@ offline.plot({'data': goalScatter, 'layout': gaScatLayout}, filename='goalsANDas
 offline.plot({'data': barData, 'layout': barLayout}, filename='meaningInThePrem1.html')
 offline.plot({'data': premTable, 'layout': premLayout}, filename='premTable.html')
 offline.plot({'data': ptDiffScat, 'layout': ptDiffLayout}, filename='ptDiff.html')
+offline.plot({'data': ptContScat, 'layout': ptContLayout}, filename='ptCont.html')
