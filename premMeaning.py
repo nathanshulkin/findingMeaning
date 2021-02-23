@@ -32,6 +32,7 @@ for team in prem2021:
 
 
 table = premFunctions.displayTable(prem2021)
+# tableLast10 = premFunctions.displayTableLast10(prem2021)
 
 # add players to dictionary
 xGlAst, xGoals, xAssists = premFunctions.getGoalsandAssists(prem2021, teams)
