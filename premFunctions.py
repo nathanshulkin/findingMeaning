@@ -50,34 +50,46 @@ def displayTableLast10(prem):
         ga = 0
         points = 0
         played = 0
-        prem.reverse()
-        while played < 11:
-            for mw in prem[team]:
-                # match played
+        last10 = 38
+        print(team)
+        while played < 10:
+            mw = "mw" + str(last10)
+            try:
+                points, gs, ga, gd = getLast10(prem, team, points, mw, gs, ga, gd)
+                print(mw)
+                print(points)
                 played += 1
-                gs += prem[team][mw]['mScore']
-                ga += prem[team][mw]['oScore']
-                # 3 points for a win
-                if prem[team][mw]['result'] == 'w':
-                    points += 3
-                    gd += (prem[team][mw]['mScore'] - prem[team][mw]['oScore'])
-                # 1 point for draw
-                elif prem[team][mw]['result'] == 'd':
-                    points += 1
-                    gd += (prem[team][mw]['mScore'] - prem[team][mw]['oScore'])
-                # nothing for a loss
-                else:
-                    points += 0
-                    gd += (prem[team][mw]['mScore'] - prem[team][mw]['oScore'])
-            # print(gd)
-            # table[str(team)+'gd'] = gd
-            table[team] = [points, gd, played, gs, ga]
+                last10 -= 1
+            except KeyError:
+                last10 -= 1
+
+        # print(gd)
+        # table[str(team)+'gd'] = gd
+        table[team] = [points, gd, played, gs, ga]
 
     # sort table
     table = sorted(table.items(), key=lambda x: x[1], reverse=True)
 
     return table
 
+
+def getLast10(prem, team, points, mw, gs, ga, gd):
+    gs += prem[team][mw]['mScore']
+    ga += prem[team][mw]['oScore']
+    # 3 points for a win
+    if prem[team][mw]['result'] == 'w':
+        points += 3
+        gd += (prem[team][mw]['mScore'] - prem[team][mw]['oScore'])
+    # 1 point for draw
+    elif prem[team][mw]['result'] == 'd':
+        points += 1
+        gd += (prem[team][mw]['mScore'] - prem[team][mw]['oScore'])
+    # nothing for a loss
+    else:
+        points += 0
+        gd += (prem[team][mw]['mScore'] - prem[team][mw]['oScore'])
+
+    return points, gs, ga, gd
 
 # display teams by mw
 def displayTeamMW(prem, team, mw):

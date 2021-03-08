@@ -26,6 +26,9 @@ teamGA = []
 ptDiff = []
 ptContributed = []
 playerTeam = []
+teamLast10 = []
+pointsLast10 = []
+teamGDLast10 = []
 
 # get the data
 for i in range(len(pm.daPlayers)):
@@ -50,6 +53,9 @@ for i in range(len(pm.daPlayers)):
         teamGS.append(pm.table[i][1][3])
         teamGA.append(pm.table[i][1][4])
         teamPlayed.append(pm.table[i][1][2])
+        teamLast10.append(pm.tableLast10[i][0])
+        pointsLast10.append(pm.tableLast10[i][1][0])
+        teamGDLast10.append(pm.tableLast10[i][1][1])
     except IndexError:
         True
 
@@ -72,6 +78,8 @@ playerTeam.reverse()
 
 points.reverse()
 team.reverse()
+pointsLast10.reverse()
+teamLast10.reverse()
 
 # scatter plot, color gradient
 
@@ -96,30 +104,16 @@ scatLayout = {
     'title': 'Meaning in the Prem 20/21',
     'xaxis': {
         'title': 'Total Goals/Assists',
-        'range': [0, 25]
+        'range': [0, 30]
     },
     'yaxis': {
         'title': 'Meaningful Goals/Assists',
-        'range': [0, 20]
+        'range': [0, 25]
     },
     'template': 'plotly_dark'
 
 }
 
-
-# ratio of meaningful goals/game
-scatterData1 = [{
-    'type': 'scatter',
-    'x': players,
-    'y': meanGA,
-    # 'text': players,
-    'mode': 'markers',
-    # 'size': 10,
-    'marker': {
-        'color': 'gold',
-        'symbol': 'circle-open-dot'
-        }
-    }]
 
 # unzip dictionary into two tuples
 # thisList = goals.items()
@@ -318,6 +312,33 @@ premLayout = {
 }
 
 
+# prem table last 10 ish
+premTableLast10 = {
+    'type': 'bar',
+    'x': pointsLast10,
+    'y': teamLast10,
+    'orientation': 'h',
+    'marker': {
+        'colorscale': 'purples',
+        'color': pointsLast10,
+        'colorbar': {'title': 'Value'},
+
+    }
+}
+
+premLayoutLast10 = {
+    'title': 'Premier League 20/21 Table Last 10 Games',
+    'xaxis': {
+        'tickmode': 'linear',
+    },
+    'yaxis': {
+        'title': '',
+    },
+    'template': 'plotly_dark'
+
+}
+
+
 # i dont know
 
 # ratio of meaningful goals/game
@@ -353,3 +374,4 @@ offline.plot({'data': barData, 'layout': barLayout}, filename='meaningInThePrem1
 offline.plot({'data': premTable, 'layout': premLayout}, filename='premTable.html')
 offline.plot({'data': ptDiffScat, 'layout': ptDiffLayout}, filename='ptDiff.html')
 offline.plot({'data': ptContScat, 'layout': ptContLayout}, filename='ptCont.html')
+offline.plot({'data': premTableLast10, 'layout': premLayoutLast10}, filename='premTableLast10.html')
