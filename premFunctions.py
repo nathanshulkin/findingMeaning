@@ -16,20 +16,7 @@ def displayTable(prem):
         for mw in prem[team]:
             # match played
             played += 1
-            gs += prem[team][mw]['mScore']
-            ga += prem[team][mw]['oScore']
-            # 3 points for a win
-            if prem[team][mw]['result'] == 'w':
-                points += 3
-                gd += (prem[team][mw]['mScore'] - prem[team][mw]['oScore'])
-            # 1 point for draw
-            elif prem[team][mw]['result'] == 'd':
-                points += 1
-                gd += (prem[team][mw]['mScore'] - prem[team][mw]['oScore'])
-            # nothing for a loss
-            else:
-                points += 0
-                gd += (prem[team][mw]['mScore'] - prem[team][mw]['oScore'])
+            points, gs, ga, gd = getPoints(prem, team, points, mw, gs, ga, gd)
         # print(gd)
         # table[str(team)+'gd'] = gd
         table[team] = [points, gd, played, gs, ga]
@@ -39,7 +26,10 @@ def displayTable(prem):
 
     return table
 
+
 # STILL NEED TO FIGURE OUT
+# MOSTLY FIGURED OUT
+# still not 10 most recent, just 10 highest MWs
 # display table last 10 games
 def displayTableLast10(prem):
     # structure for table
@@ -51,13 +41,12 @@ def displayTableLast10(prem):
         points = 0
         played = 0
         last10 = 38
-        print(team)
         while played < 10:
             mw = "mw" + str(last10)
             try:
-                points, gs, ga, gd = getLast10(prem, team, points, mw, gs, ga, gd)
-                print(mw)
-                print(points)
+                points, gs, ga, gd = getPoints(prem, team, points, mw, gs, ga, gd)
+                # print(mw)
+                # print(points)
                 played += 1
                 last10 -= 1
             except KeyError:
@@ -73,7 +62,7 @@ def displayTableLast10(prem):
     return table
 
 
-def getLast10(prem, team, points, mw, gs, ga, gd):
+def getPoints(prem, team, points, mw, gs, ga, gd):
     gs += prem[team][mw]['mScore']
     ga += prem[team][mw]['oScore']
     # 3 points for a win
@@ -91,34 +80,10 @@ def getLast10(prem, team, points, mw, gs, ga, gd):
 
     return points, gs, ga, gd
 
-# display teams by mw
-def displayTeamMW(prem, team, mw):
-    print(team.upper() + ': ')
-    print(str(prem[team][mw]['mScore']) + ' - ' + str(prem[team]['mw1']['oScore']))
-    # check result of game
-    if prem[team][mw]['result'] == 'w':
-        print('win')
-    elif prem[team][mw]['result'] == 'd':
-        print('draw')
-    else:
-        print('loss')
-
-    print('')
-
-    print("goals:")  # + str(prem2021[team]['mw1']['goals']))
-    for scor in prem[team][mw]['goals']:
-        print(scor + ": " + str(prem[team]['mw1']['goals'][scor]) + "\t\t")
-    print('')
-    print("assists:")
-    for astr in prem[team][mw]['assists']:
-        print(astr + ": " + str(prem[team]['mw1']['assists'][astr]) + "\t\t")
-    print('\n')
-
 
 # display meaningful player
 def displayMeaningfulPlayer(prem, player):
     print(player.upper() + ':')
-    # pprint.pprint(prem1920[player])
     print('total: ' + str([prem[player]['totalGA']]) + '\t\tgoals: ' + str([prem[player]['g']]) + '\t\tassists: ' + str([prem[player]['a']]),
           '\nmeaningful goals+assists: ' + str([prem[player]['meaningfulGA']]),
           '\nmeaningful games with goal/assist: ' + str([prem[player]['meaningfulGame']]),
