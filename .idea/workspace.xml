@@ -25,11 +25,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/plotMeaningPrem.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3720">
-              <caret line="248" column="6" lean-forward="true" selection-start-line="248" selection-start-column="6" selection-end-line="248" selection-end-column="6" />
+            <state relative-caret-position="1620">
+              <caret line="110" column="10" selection-start-line="110" selection-start-column="10" selection-end-line="110" selection-end-column="10" />
               <folding>
                 <element signature="e#75#101#0" expanded="true" />
               </folding>
@@ -67,11 +67,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/prem2021.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="128">
-              <caret line="1698" column="64" selection-start-line="1698" selection-start-column="64" selection-end-line="1698" selection-end-column="64" />
+            <state relative-caret-position="14640">
+              <caret line="976" column="73" selection-start-line="976" selection-start-column="73" selection-end-line="976" selection-end-column="73" />
             </state>
           </provider>
         </entry>
@@ -152,8 +152,8 @@
         <option value="$PROJECT_DIR$/player.py" />
         <option value="$PROJECT_DIR$/premMeaning.py" />
         <option value="$PROJECT_DIR$/premFunctions.py" />
-        <option value="$PROJECT_DIR$/prem2021.json" />
         <option value="$PROJECT_DIR$/plotMeaningPrem.py" />
+        <option value="$PROJECT_DIR$/prem2021.json" />
       </list>
     </option>
   </component>
@@ -167,8 +167,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane" />
       <pane id="Scope" />
+      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -274,7 +274,7 @@
     <frame x="0" y="23" width="1280" height="751" extended-state="0" />
     <layout>
       <window_info id="Favorites" order="0" sideWeight="0.5022831" side_tool="true" weight="0.18012924" />
-      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.4977169" visible="true" weight="0.226979" />
+      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.4977169" visible="true" weight="0.2641357" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="0" weight="0.32876712" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
@@ -304,6 +304,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/meaningInThePrem1.html">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plotMeaningPrem.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1620">
+          <caret line="110" column="10" selection-start-line="110" selection-start-column="10" selection-end-line="110" selection-end-column="10" />
+          <folding>
+            <element signature="e#75#101#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/premMeaning.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -348,18 +358,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/prem2021.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="1698" column="64" selection-start-line="1698" selection-start-column="64" selection-end-line="1698" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/plotMeaningPrem.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3720">
-          <caret line="248" column="6" lean-forward="true" selection-start-line="248" selection-start-column="6" selection-end-line="248" selection-end-column="6" />
-          <folding>
-            <element signature="e#75#101#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="14640">
+          <caret line="976" column="73" selection-start-line="976" selection-start-column="73" selection-end-line="976" selection-end-column="73" />
         </state>
       </provider>
     </entry>

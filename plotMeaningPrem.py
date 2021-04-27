@@ -104,11 +104,11 @@ scatLayout = {
     'title': 'Meaning in the Prem 20/21',
     'xaxis': {
         'title': 'Total Goals/Assists',
-        'range': [0, 35]
+        # 'range': [0, 35]
     },
     'yaxis': {
         'title': 'Meaningful Goals/Assists',
-        'range': [0, 25]
+        # 'range': [0, 25]
     },
     'template': 'plotly_dark'
 
@@ -181,12 +181,12 @@ gaScatLayout = {
     'xaxis': {
         'title': 'Goals',
         'tickmode': 'linear',
-        'range': [0, 20]
+        # 'range': [0, 20]
     },
     'yaxis': {
         'title': 'Assists',
         'tickmode': 'linear',
-        'range': [0, 20]
+        # 'range': [0, 20]
     },
     'template': 'plotly_dark'
 
