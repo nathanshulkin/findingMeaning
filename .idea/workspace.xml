@@ -7,7 +7,6 @@
       <change beforePath="$PROJECT_DIR$/goalsANDassistsPremScat.html" beforeDir="false" afterPath="$PROJECT_DIR$/goalsANDassistsPremScat.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/meaningInThePrem.html" beforeDir="false" afterPath="$PROJECT_DIR$/meaningInThePrem.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/meaningInThePrem1.html" beforeDir="false" afterPath="$PROJECT_DIR$/meaningInThePrem1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotMeaningPrem.py" beforeDir="false" afterPath="$PROJECT_DIR$/plotMeaningPrem.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/prem2021.json" beforeDir="false" afterPath="$PROJECT_DIR$/prem2021.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/premTable.html" beforeDir="false" afterPath="$PROJECT_DIR$/premTable.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/premTableLast10.html" beforeDir="false" afterPath="$PROJECT_DIR$/premTableLast10.html" afterDir="false" />
@@ -40,8 +39,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/premMeaning.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="34" selection-start-line="34" selection-end-line="34" />
+            <state relative-caret-position="270">
+              <caret line="21" selection-start-line="21" selection-end-line="23" selection-end-column="33" />
               <folding>
                 <element signature="e#28#39#0" expanded="true" />
               </folding>
@@ -70,8 +69,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/prem2021.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="14640">
-              <caret line="976" column="73" selection-start-line="976" selection-start-column="73" selection-end-line="976" selection-end-column="73" />
+            <state relative-caret-position="137">
+              <caret line="2154" column="73" selection-start-line="2154" selection-start-column="73" selection-end-line="2154" selection-end-column="73" />
             </state>
           </provider>
         </entry>
@@ -108,8 +107,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>phillips</find>
-      <find>ndidi</find>
       <find>OG</find>
       <find>harrison</find>
       <find>townsend</find>
@@ -138,6 +135,8 @@
       <find>chlupp</find>
       <find>coleman</find>
       <find>traore</find>
+      <find>alisson</find>
+      <find>tier</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -274,10 +273,10 @@
     <frame x="0" y="23" width="1280" height="751" extended-state="0" />
     <layout>
       <window_info id="Favorites" order="0" sideWeight="0.5022831" side_tool="true" weight="0.18012924" />
-      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.4977169" visible="true" weight="0.2641357" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.4977169" visible="true" weight="0.3029079" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="0" weight="0.32876712" />
-      <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" weight="0.32928678" />
       <window_info anchor="bottom" id="Python Console" order="2" />
       <window_info anchor="bottom" id="Message" order="3" />
       <window_info anchor="bottom" id="Find" order="4" />
@@ -317,8 +316,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/premMeaning.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="34" selection-start-line="34" selection-end-line="34" />
+        <state relative-caret-position="270">
+          <caret line="21" selection-start-line="21" selection-end-line="23" selection-end-column="33" />
           <folding>
             <element signature="e#28#39#0" expanded="true" />
           </folding>
@@ -358,8 +357,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/prem2021.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="14640">
-          <caret line="976" column="73" selection-start-line="976" selection-start-column="73" selection-end-line="976" selection-end-column="73" />
+        <state relative-caret-position="137">
+          <caret line="2154" column="73" selection-start-line="2154" selection-start-column="73" selection-end-line="2154" selection-end-column="73" />
         </state>
       </provider>
     </entry>
